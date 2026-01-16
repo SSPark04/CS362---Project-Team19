@@ -42,71 +42,61 @@ Github Repo: https://github.com/SSPark04/CS362---Project-Team19
 
 Abstract
 
-Many events are held within the OSU EECS department, but students often find it hard to identify their exact locations. 
-To solve this problem, we propose a web service that visualizes event information using a map interface. 
-This service allows users to check event venues quickly and intuitively. 
-
+    Many events are held within the OSU EECS department, but students often find it hard to identify their exact locations. 
+    To solve this problem, we propose a web service that visualizes event information using a map interface. 
+    This service allows users to check event venues quickly and intuitively.   
+  
 
 Goal
 
-Our goal is to provide a visual platform where students can immediately identify EECS events on campus. 
-The system displays the location, time, and event details directly on the university map. 
-This allows students to intuitively find relevant workshops or meetups and helps them manage their schedules more efficiently.
-
-- Current Practice
-Currently, information about EECS events is primarily distributed via email. This traditional method has several drawbacks:
-
-- Lack of Specificity: 
-Text-based emails often fail to provide a clear sense of the event's exact location within the large campus.
-
-- Low Visibility:
-Students must manually search through their inboxes to find event details, making it difficult to get a quick overview of upcoming activities.
-
-- Difficulty in Navigation: 
-Without a visual interface, students cannot intuitively understand the proximity of events to their current location or classrooms.
+    Our goal is to provide a visual platform where students can immediately identify EECS events on campus. 
+    The system displays the location, time, and event details directly on the university map. 
+    This allows students to intuitively find relevant workshops or meetups and helps them manage their schedules more efficiently.
+    
+    - Current Practice
+    Currently, information about EECS events is primarily distributed via email. This traditional method has several drawbacks:
+    
+    - Lack of Specificity: 
+    Text-based emails often fail to provide a clear sense of the event's exact location within the large campus.
+    
+    - Low Visibility:
+    Students must manually search through their inboxes to find event details, making it difficult to get a quick overview of upcoming activities.
+    
+    - Difficulty in Navigation: 
+    Without a visual interface, students cannot intuitively understand the proximity of events to their current location or classrooms.
 
 
 
 Novelty
 
-We are hoping that with the help AI organizing and keeping track of a calendar will be easier. With the ability to notify the users of events and behaviour. 
-We hope to be able to better optimize and keep track of their schedule.
-
-
+    This project transforms traditional, text-heavy email announcements into a centralized visual dashboard. By mapping event data onto the specific geography of the OSU campus, the service provides a "spatial awareness" of departmental activities that email lists cannot offer.
 
 Effects - OSU Students
 
-Handle their class schedule, email, events, and multiple assignment tasks daily.
-This system will make it easier for OSU students to discover and attend academic recommended events by AI, and present event information in a visual and centralized map interface to find easily. 
-Students can quickly see where and when events occur. This can increase participation in workshops and community activities while reducing missed opportunities caused by poor visibility of event information.
+    OSU students balance heavy course loads and numerous activities. This system will make it easier for students to discover and attend academic events through a centralized map interface. By seeing exactly where and when events occur in relation to their current location, students can increase their participation in the EECS community and reduce missed opportunities.
 
-
-Technical approach
-
-To achieve this goal we plan on using a variety of different tools and extensions. We are planning on making a website. 
-Using a calendar architecture as the base. And then the free version of Google's AI API to provide summaries and suggestions to stay more on track.
-
+Technical Approach
+  
+    We will develop a web-based platform using a map API (such as Google Maps or OpenStreetMap) as the core interface. The backend will store event data (titles, times, and building locations) which will be rendered as interactive pins on the OSU campus map.
 
 Risk
 
-The most serious risk that we will face is through relying on an external AI API that will generate task recommendations. We plan on using the free Google AI API, 
-so we depend on its availability, rate limits, response speed, and output quality. If any of these things change against us, we will face issues with our program functioning correctly. 
-To ensure that this risk is mitigated, we will incorporate core features such as importing calendars, setting priorities, and sending deadline notifications independently of the AI. 
-
+    The primary risk is the manual data entry and maintenance of event information. To mitigate this, we will design an easy-to-use administrative interface for event organizers to quickly input data, ensuring the map remains up-to-date with minimal effort.
 
 Major Features
 
-Import personal calendar to create a TODO list
-Notify the user when the task deadlines are approaching
-Set priority level for each task
-Recommend events to the user if any are likely to interest them
-Analyze user preferences, behavior, tasks history to suggest various options.
+    Interactive OSU Map: A visual interface showing all active and upcoming EECS events.
+    
+    Event Detail Pop-ups: Clicking a map pin reveals the "What, When, and Where" of the event.
+    
+    Location Pinpointing: Clear markers for building locations and room numbers.
+    
+    Time-based Filtering: View events happening "Today," "This Week," or by specific time slots.
 
+Optional (Future Extensions)
 
-Stretch Goals
-
-Real-time Navigation Support
-Personalized Event Recommendation Model
-
-
-
+    AI-Assisted Parsing: Using AI to automatically extract event details from email text to reduce manual entry.
+    
+    Personalized Recommendations: Suggesting events based on a student's major or interests.
+    
+    Real-time Navigation Support: Integration with campus walking paths.  
