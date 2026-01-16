@@ -6,22 +6,22 @@
 
 Ideas:
 
--Card game - Brain +1
--Survival game
--2D Platformer
--Pokemon
--Puzzle game
--Balatro but Craps
--Beaver themed cookie clicker
--Personal Task Manager with AI Recommendations using API - kyohei, Shawn, Brian +3
--Open Source software extension - Visual Studio Code extension, Chrome extension - kyohei +1
+- Card game - Brain +1
+- Survival game
+- 2D Platformer
+- Pokemon
+- Puzzle game
+- Balatro but Craps
+- Beaver themed cookie clicker
+- Personal Task Manager with AI Recommendations using API - kyohei, Shawn, Brian +3
+- Open Source software extension - Visual Studio Code extension, Chrome extension - kyohei +1
 
 
 Languages:
 
--Python
--C++
--C
+- Python
+- C++
+- C
 
 
 1. Team info
@@ -51,16 +51,16 @@ Our goal is to provide a visual platform where students can immediately identify
 The system displays the location, time, and event details directly on the university map. 
 This allows students to intuitively find relevant workshops or meetups and helps them manage their schedules more efficiently.
 
--Current Practice
+- Current Practice
 Currently, information about EECS events is primarily distributed via email. This traditional method has several drawbacks:
 
--Lack of Specificity: 
+- Lack of Specificity: 
 Text-based emails often fail to provide a clear sense of the event's exact location within the large campus.
 
--Low Visibility:
+- Low Visibility:
 Students must manually search through their inboxes to find event details, making it difficult to get a quick overview of upcoming activities.
 
--Difficulty in Navigation: 
+- Difficulty in Navigation: 
 Without a visual interface, students cannot intuitively understand the proximity of events to their current location or classrooms.
 
 
