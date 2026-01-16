@@ -1,3 +1,5 @@
+Our Teams: 
+
 - Charley Lotspeich
 - Sangwoo(Shawn) Park
 - Brian McCarthy
