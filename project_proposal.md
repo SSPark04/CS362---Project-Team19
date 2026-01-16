@@ -1,41 +1,42 @@
 Our Teams: 
-
-- Charley Lotspeich
-- Sangwoo(Shawn) Park
-- Brian McCarthy
-- Kyohei Yamaguchi
+    
+    - Charley Lotspeich
+    - Sangwoo(Shawn) Park
+    - Brian McCarthy
+    - Kyohei Yamaguchi
 
 
 Ideas:
 
-- Card game - Brain +1
-- Survival game
-- 2D Platformer
-- Pokemon
-- Puzzle game
-- Balatro but Craps
-- Beaver themed cookie clicker
-- Personal Task Manager with AI Recommendations using API - kyohei, Shawn, Brian +3
-- Open Source software extension - Visual Studio Code extension, Chrome extension - kyohei +1
+    - Card game - Brain +1
+    - Survival game
+    - 2D Platformer
+    - Pokemon
+    - Puzzle game
+    - Balatro but Craps
+    - Beaver themed cookie clicker
+    - Personal Task Manager with AI Recommendations using API - kyohei, Shawn, Brian +3
+    - Open Source software extension - Visual Studio Code extension, Chrome extension - kyohei +1
+    - EECS Event Map Web Pag
 
 
 Languages:
 
-- Python
-- C++
-- C
+    - Python
+    - C++
+    - C
 
 
 1. Team info
 
 Role:
-
-- Charley Lotspeich - Project Researcher
-- Sangwoo(Shawn) Park - Leader
-- Brian McCarthy - Scheduler / Organizer
-- Kyohei Yamaguchi - Quality Assurance Tester
-
-Github Repo: https://github.com/SSPark04/CS362---Project-Team19 
+        
+    - Charley Lotspeich - Project Researcher
+    - Sangwoo(Shawn) Park - Leader
+    - Brian McCarthy - Scheduler / Organizer
+    - Kyohei Yamaguchi - Quality Assurance Tester
+    
+    Github Repo: https://github.com/SSPark04/CS362---Project-Team19 
 
 
 2. Product Description
