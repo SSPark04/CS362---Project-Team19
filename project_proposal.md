@@ -1,19 +1,19 @@
-Charley Lotspeich
-Sangwoo(Shawn) Park
-Brian McCarthy
-Kyohei Yamaguchi
+- Charley Lotspeich
+- Sangwoo(Shawn) Park
+- Brian McCarthy
+- Kyohei Yamaguchi
 
 
-Ideas:
-Card game - Brain +1
-Survival game
-2D Platformer
-Pokemon
-Puzzle game
-Balatro but Craps
-Beaver themed cookie clicker
-Personal Task Manager with AI Recommendations using API - kyohei, Shawn, Brian +3
-Open Source software extension - Visual Studio Code extension, Chrome extension - kyohei +1
+- Ideas:
+    Card game - Brain +1
+    Survival game
+    2D Platformer
+    Pokemon
+    Puzzle game
+    Balatro but Craps
+    Beaver themed cookie clicker
+    Personal Task Manager with AI Recommendations using API - kyohei, Shawn, Brian +3
+    Open Source software extension - Visual Studio Code extension, Chrome extension - kyohei +1
 
 EECS Event Map Web Page- Decided?
 
