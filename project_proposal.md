@@ -98,12 +98,35 @@ Optional (Future Extensions)
 3.1 Use Case - Charley Lotspeich
 
     Actors
+        - Student
     Triggers
+        - Student wants to add a custom event
     Preconditions
+        - The web application is accessible and running
+        - Student has access to the calendar interface
+        - Student is viewing the main calendar page
     Postconditions (success scenario)
+        - The custom event is successfully added to the system
+        - The event appears on both the calendar view and the OSU campus map
+        - A map pin is created at the specified event location
+        - Event details (title, time, and location) are stored and viewable
     List of steps (success scenario)
+        - Student opens the web app
+        - Student selects the option to "add event"
+        - System prompts user to enter the event details
+        - Student fills in the event details
+        - System saves the event data
+        - Calendar updates to display the new event
+        - Map updates to show a new pin for the event
     Extensions/variations of the success scenario
+        - Student edits an existing custom event after creation
+        - Student adds an event without a room number and only a building name
+        - Student adds a recurring event
+        - Student cancels event creation before submission
     Exceptions: failure conditions and scenarios
+        - Student doesn't fill the entire form out, system displays an error message highlighting missing inputs
+        - Invalid date or time entered, system prevents submission and requests correction
+        - Invalid/unknown location, system prompts student to enter a valid campus location
 
 3.2 Use Case - Sangwoo(Shawn) Park
 
@@ -131,7 +154,7 @@ Optional (Future Extensions)
         - student wants to see were an event is located
     Preconditions
         -The website is up and running
-        -the evnt is pinned on tracked
+        -the event is pinned on tracked
     Postconditions (success scenario)
         -the events locaation will be displayed on the OSU campus map
     List of steps (success scenario)
