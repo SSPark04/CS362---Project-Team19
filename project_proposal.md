@@ -108,12 +108,20 @@ Optional (Future Extensions)
 3.2 Use Case - Sangwoo(Shawn) Park
 
     Actors
+        - Student
     Triggers
+        - Student clicks an event pin on the map
     Preconditions
+        - Event data is loaded
     Postconditions (success scenario)
+        - Event details are displayed
     List of steps (success scenario)
-    Extensions/variations of the success scenario
-    Exceptions: failure conditions and scenarios
+        1. Student clicks map pin
+        2. System retrieves event data
+        3. System displays popup with details
+        
+        Extensions: Student opens the full detail page
+        Exceptions: If event data is missing, show an error message
 
 3.3 Use Case - Brian McCarthy
 
@@ -196,7 +204,10 @@ Optional (Future Extensions)
 6. Team Process Description
 
 6.1 Software Toolset
-    
+    - GitHub for version control and collaboration
+    - Google Maps or OpenStreetMap API for map rendering
+    - Web framework (e.g., Flask or Node.js) for backend services
+    - HTML/CSS/JavaScript for frontend development
 
 6.2 Team Member Roles and Justification
     - Charley Lotspeich (Project Researcher): Responsible for researching map APIs, event data formats, and best practices for calendar interfaces. Charley's research role ensures we make informed technical decisions and understand user needs.
@@ -205,10 +216,17 @@ Optional (Future Extensions)
     - Kyohei Yamaguchi (Quality Assurance Tester): Designs and executes test cases, identifies bugs, and verifies that all features work as expected. Kyohei's QA role ensures the final product is reliable and user-friendly.
 
 6.3 Development Schedule and Milestones
-   
+   - Week3: Basic map display with sample event pins
+   - Week4: ...
+   - Week5:
+   - Week6:
+   - Week7:
+   - Week8:
 
 6.4 Risk Management
-   
+    - Map API limitations or outages could affect usability → Mitigation: fallback list view
+    - Incomplete event data updates → Mitigation: simple admin interface
+    - Team schedule conflicts → Mitigation: weekly check-ins and task tracking
 
 6.5 External Feedback Process
     
