@@ -257,11 +257,9 @@ Optional (Future Extensions)
 6.3 Development Schedule and Milestones
 
     - Week3: Basic map display with sample event pins
-    - Week4: ...
-    - Week5:
-    - Week6:
-    - Week7:
-    - Week8:
+    - Week4: Event filtering by time and location
+    - Week5: Admin interface for adding events
+    - Week6:Testing and bug fixing
 
 6.4 Risk Management
 
@@ -270,4 +268,7 @@ Optional (Future Extensions)
     - Team schedule conflicts → Mitigation: weekly check-ins and task tracking
 
 6.5 External Feedback Process
-    
+
+    - We will seek feedback from classmates during mid-quarter demo sessions.
+    - TA feedback will be requested after core features are implemented.
+    - Feedback will be incorporated before final deployment.
