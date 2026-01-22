@@ -126,12 +126,26 @@ Optional (Future Extensions)
 3.3 Use Case - Brian McCarthy
 
     Actors
+        - students
     Triggers
+        - student wants to see were an event is located
     Preconditions
+        -The website is up and running
+        -the evnt is pinned on tracked
     Postconditions (success scenario)
+        -the events locaation will be displayed on the OSU campus map
     List of steps (success scenario)
+        1. student open the website
+        2. the student has the event they want tracked
+        3. the student goes to the map page
+        4. the event they want is tracked on the map.
     Extensions/variations of the success scenario
+        - The student looks to see what events are going on at a certain building
     Exceptions: failure conditions and scenarios
+        - Invalid event
+        - Server Failure
+        -the event is cancled
+    
 
 3.4 Use Case - Kyohei Yamaguchi
 
