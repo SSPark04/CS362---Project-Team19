@@ -247,12 +247,19 @@ Optional (Future Extensions)
 
 6. Team Process Description
 
-6.1 Software Toolset
+6. Team Process Description (Expanded)
 
-    - GitHub for version control and collaboration
-    - Google Maps or OpenStreetMap API for map rendering
-    - Web framework (e.g., Flask or Node.js) for backend services
-    - HTML/CSS/JavaScript for frontend development
+6.1 Software Toolset
+    - Programming Language: Python 3.x
+    - Web Framework: Flask (lightweight and flexible for our MVP)
+    - Database:Json
+    - Frontend: HTML5, CSS3, JavaScript
+    - Map Integration: OSU Campus Map API / Google Maps API / OpenStreetMap
+    - Version Control: Git, GitHub
+    - Testing Framework: pytest (for unit testing)
+    - Package Management: pip, requirements.txt
+    - Development Tools: VS Code / PyCharm, Postman (for API testing)
+    - Deployment: Local
 
 6.2 Team Member Roles and Justification
 
@@ -262,20 +269,182 @@ Optional (Future Extensions)
     - Kyohei Yamaguchi (Quality Assurance Tester): Designs and executes test cases, identifies bugs, and verifies that all features work as expected. Kyohei's QA role ensures the final product is reliable and user-friendly.
 
 6.3 Development Schedule and Milestones
-
-    - Week3: Basic map display with sample event pins
-    - Week4: Event filtering by time and location
-    - Week5: Admin interface for adding events
-    - Week6:Testing and bug fixing
+    [TODO: Identify milestones (external and internal), define tasks along with effort estimates (at granularity no coarser than 1-person-week units), and identify dependences among them. Use a table format.]
 
 6.4 Risk Management
-
-    - Map API limitations or outages could affect usability → Mitigation: fallback list view
-    - Incomplete event data updates → Mitigation: simple admin interface
-    - Team schedule conflicts → Mitigation: weekly check-ins and task tracking
+    6.4.1 Risk 1: [TODO: Risk name]
+        Likelihood: [TODO: high/medium/low]
+        Impact: [TODO: high/medium/low]
+        Evidence: [TODO: Evidence upon which you base your estimates]
+        Mitigation Steps: [TODO: Steps you are taking to reduce the likelihood or impact]
+        Detection Plan: [TODO: Plan for detecting the problem]
+        Mitigation Plan: [TODO: Mitigation plan should it occur]
+        Changes since Requirements: [TODO: How this has changed since Requirements document]
+    
+    6.4.2 Risk 2: [TODO: Risk name]
+        Likelihood: [TODO: high/medium/low]
+        Impact: [TODO: high/medium/low]
+        Evidence: [TODO: Evidence upon which you base your estimates]
+        Mitigation Steps: [TODO: Steps you are taking to reduce the likelihood or impact]
+        Detection Plan: [TODO: Plan for detecting the problem]
+        Mitigation Plan: [TODO: Mitigation plan should it occur]
+        Changes since Requirements: [TODO: How this has changed since Requirements document]
+    
+    6.4.3 Risk 3: [TODO: Risk name]
+        Likelihood: [TODO: high/medium/low]
+        Impact: [TODO: high/medium/low]
+        Evidence: [TODO: Evidence upon which you base your estimates]
+        Mitigation Steps: [TODO: Steps you are taking to reduce the likelihood or impact]
+        Detection Plan: [TODO: Plan for detecting the problem]
+        Mitigation Plan: [TODO: Mitigation plan should it occur]
+        Changes since Requirements: [TODO: How this has changed since Requirements document]
+    
+    6.4.4 Risk 4: [TODO: Risk name]
+        Likelihood: [TODO: high/medium/low]
+        Impact: [TODO: high/medium/low]
+        Evidence: [TODO: Evidence upon which you base your estimates]
+        Mitigation Steps: [TODO: Steps you are taking to reduce the likelihood or impact]
+        Detection Plan: [TODO: Plan for detecting the problem]
+        Mitigation Plan: [TODO: Mitigation plan should it occur]
+        Changes since Requirements: [TODO: How this has changed since Requirements document]
+    
+    6.4.5 Risk 5: [TODO: Risk name]
+        Likelihood: [TODO: high/medium/low]
+        Impact: [TODO: high/medium/low]
+        Evidence: [TODO: Evidence upon which you base your estimates]
+        Mitigation Steps: [TODO: Steps you are taking to reduce the likelihood or impact]
+        Detection Plan: [TODO: Plan for detecting the problem]
+        Mitigation Plan: [TODO: Mitigation plan should it occur]
+        Changes since Requirements: [TODO: How this has changed since Requirements document]
 
 6.5 External Feedback Process
+    [TODO: Describe how external feedback is collected and incorporated]
 
-    - We will seek feedback from classmates during mid-quarter demo sessions.
-    - TA feedback will be requested after core features are implemented.
-    - Feedback will be incorporated before final deployment.
+6.6 Test Plan & Bugs
+    6.6.1 Testing Strategy
+        Unit Testing: [TODO: Describe unit testing strategy]
+        System/Integration Testing: [TODO: Describe system/integration testing strategy]
+        Usability Testing: [TODO: Describe usability testing strategy]
+    
+    6.6.2 Test Suites
+        [TODO: Describe specific test suites identified to capture the requirements]
+    
+    6.6.3 Bug Tracking
+        We will use GitHub Issues to track all bugs discovered during development, testing, and user feedback. Our bug tracking strategy includes:
+        
+        - Issue Templates: We will create issue templates for bug reports that include fields for:
+          * Description of the bug
+          * Steps to reproduce
+          * Expected vs. actual behavior
+          * Environment (browser, OS, etc.)
+          * Screenshots if applicable
+        
+        - Labeling System: Bugs will be labeled with:
+          * Priority (high/medium/low)
+          * Component affected (frontend/backend/database/map integration)
+          * Status (open/in-progress/resolved)
+        
+        - Assignment: Bugs will be assigned to team members based on their roles and expertise
+        
+        - Milestone Tracking: Critical bugs will be linked to project milestones to ensure timely resolution
+        
+        - Testing Integration: Bugs discovered during testing will be logged as GitHub Issues with links to relevant test cases
+
+6.7 Documentation Plan
+    We plan to deliver the following documentation with the system:
+    
+    - User Guide: Step-by-step instructions for end users on how to:
+      * View events on the map
+      * Filter events by date and location
+      * View event details
+      * Use the calendar interface
+    
+    - Administrator Guide: Instructions for administrators on how to:
+      * Add new events to the system
+      * Update existing events
+      * Manage event data
+      * Configure system settings
+    
+    - Developer Guide: Technical documentation including:
+      * System architecture overview
+      * API documentation
+      * Database schema
+      * Setup and installation instructions
+      * Contributing guidelines
+    
+    - README.md: Quick start guide with:
+      * Project overview
+      * Installation instructions
+      * Dependencies
+      * How to run the application locally
+    
+    - In-app Help: Contextual help menus and tooltips within the web application interface
+
+
+7. Software Architecture
+
+7.1 System Overview
+    [TODO: Provide an overview of the system architecture]
+
+7.2 Major Components
+    [TODO: Identify and describe the major software components and their functionality at a conceptual level]
+
+7.3 Component Interfaces
+    [TODO: Specify the interfaces between components]
+
+7.4 Data Storage
+    [TODO: Describe in detail what data your system stores, and how. If it uses a database, give the high level database schema. If not, describe how you are storing the data and its organization.]
+
+7.5 Architectural Assumptions
+    [TODO: If there are particular assumptions underpinning your chosen architecture, identify and describe them]
+
+7.6 Architectural Decisions
+    7.6.1 Decision 1: [TODO: Architecture decision]
+        Alternative: [TODO: Describe alternative]
+        Pros: [TODO: Pros of alternative]
+        Cons: [TODO: Cons of alternative]
+        Rationale: [TODO: Why we chose our approach]
+    
+    7.6.2 Decision 2: [TODO: Architecture decision]
+        Alternative: [TODO: Describe alternative]
+        Pros: [TODO: Pros of alternative]
+        Cons: [TODO: Cons of alternative]
+        Rationale: [TODO: Why we chose our approach]
+
+
+8. Software Design
+
+8.1 Component 1: [TODO: Component name]
+    8.1.1 Packages/Classes/Units
+        [TODO: What packages, classes, or other units of abstraction form this component?]
+    
+    8.1.2 Responsibilities
+        [TODO: What are the responsibilities of each of those parts of the component?]
+
+8.2 Component 2: [TODO: Component name]
+    8.2.1 Packages/Classes/Units
+        [TODO: What packages, classes, or other units of abstraction form this component?]
+    
+    8.2.2 Responsibilities
+        [TODO: What are the responsibilities of each of those parts of the component?]
+
+8.3 Component 3: [TODO: Component name]
+    8.3.1 Packages/Classes/Units
+        [TODO: What packages, classes, or other units of abstraction form this component?]
+    
+    8.3.2 Responsibilities
+        [TODO: What are the responsibilities of each of those parts of the component?]
+
+[Note: Add more components as needed]
+
+
+9. Coding Guidelines
+
+9.1 Python
+    Guideline: PEP 8 -- Style Guide for Python Code (https://pep8.org/)
+    
+
+9.2 [TODO: Additional languages if any]
+    Guideline: [TODO: Link to pre-existing coding style guideline]
+    Rationale: [TODO: Briefly state why you chose this guideline]
+    Enforcement: [TODO: How you plan to enforce this guideline]
