@@ -272,25 +272,21 @@ Optional (Future Extensions)
     [TODO: Identify milestones (external and internal), define tasks along with effort estimates (at granularity no coarser than 1-person-week units), and identify dependences among them. Use a table format.]
 
 6.4 Risk Management
+
     6.4.1 Risk 1: Event data parsing is hard
-    ```
         Likelihood: Medium
         Impact: High
         Evidence: Current practice distributes EECS event info via email, which varies in format and may lack structured location details (room/building). Our optional “AI-assisted parsing” is not part of the MVP, so acquisition may remain manual.        
         Mitigation Steps: 
-        ```
             - Define an MVP input format (title, date/time, building, optional room).
             - Start with manual entry for MVP; evaluate feasibility of simple rule-based parsing later (regex/templates).
-            - Collect 10–20 real EECS emails early to estimate parsing complexity.
-        ```
+             - Collect 10–20 real EECS emails early to estimate parsing complexity.
         Detection Plan: Track time spent per event entry during the first week of implementation; log issues when email details are missing/ambiguous.
         Mitigation Plan: 
-        ```
             - Keep manual admin entry as the primary workflow for MVP. 
             - If a room cannot be reliably extracted, store building-only and display a “room unknown” label.
-        ```
         Changes since Requirements: Requirements mentioned optional AI-assisted parsing; for MP3 planning, we treat parsing automation as post-MVP and design a manual admin workflow as the reliable baseline.
-    ```
+
     6.4.2 Risk 2: [TODO: Risk name]
         Likelihood: [TODO: high/medium/low]
         Impact: [TODO: high/medium/low]
