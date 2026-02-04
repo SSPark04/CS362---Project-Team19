@@ -280,30 +280,41 @@ Optional (Future Extensions)
         Mitigation Steps: 
             - Define an MVP input format (title, date/time, building, optional room).
             - Start with manual entry for MVP; evaluate feasibility of simple rule-based parsing later (regex/templates).
-             - Collect 10–20 real EECS emails early to estimate parsing complexity.
+            - Collect 10–20 real EECS emails early to estimate parsing complexity.
         Detection Plan: Track time spent per event entry during the first week of implementation; log issues when email details are missing/ambiguous.
         Mitigation Plan: 
             - Keep manual admin entry as the primary workflow for MVP. 
             - If a room cannot be reliably extracted, store building-only and display a “room unknown” label.
         Changes since Requirements: Requirements mentioned optional AI-assisted parsing; for MP3 planning, we treat parsing automation as post-MVP and design a manual admin workflow as the reliable baseline.
 
-    6.4.2 Risk 2: [TODO: Risk name]
-        Likelihood: [TODO: high/medium/low]
-        Impact: [TODO: high/medium/low]
-        Evidence: [TODO: Evidence upon which you base your estimates]
-        Mitigation Steps: [TODO: Steps you are taking to reduce the likelihood or impact]
-        Detection Plan: [TODO: Plan for detecting the problem]
-        Mitigation Plan: [TODO: Mitigation plan should it occur]
-        Changes since Requirements: [TODO: How this has changed since Requirements document]
+    6.4.2 Risk 2: Map API integration issues
+        Likelihood: Medium
+        Impact: High
+        Evidence: The core UI depends on an external map API (Google Maps, OSU map). API keys, usage limits, or incomplete campus location data can block correct pin rendering.
+        Mitigation Steps:
+            - Prototype pins + popups early (already started via mock page branch per team chat).
+            - Choose one map provider for MVP and document key setup in README.
+            - Prefer OSM/Leaflet if we want to reduce key/rate-limit risk.
+        Detection Plan: 
+            - Automated smoke test: “map loads + one known building pin appears” on every merge to main.
+            - Monitor console/network errors for map tile/API failures.
+        Mitigation Plan:
+            - Provide a fallback list view of events if map fails to load (requirement-aligned robustness).
+            - Temporarily pin only building-level locations instead of geocoding.
+        Changes since Requirements:
+            - Architecture now explicitly plans a fallback list behavior if the map API fails, to prevent total feature loss. 
     
-    6.4.3 Risk 3: [TODO: Risk name]
-        Likelihood: [TODO: high/medium/low]
-        Impact: [TODO: high/medium/low]
-        Evidence: [TODO: Evidence upon which you base your estimates]
-        Mitigation Steps: [TODO: Steps you are taking to reduce the likelihood or impact]
-        Detection Plan: [TODO: Plan for detecting the problem]
-        Mitigation Plan: [TODO: Mitigation plan should it occur]
-        Changes since Requirements: [TODO: How this has changed since Requirements document]
+    6.4.3 Risk 3: Data integrity issue cause by Data storage approach
+        Likelihood: Low
+        Impact: Medium
+        Evidence: Current we use JSON as the database. JSON file writes can cause data corruption if multiple admins edit simultaneousl.
+        Mitigation Steps:
+            - Limit write access to an “admin” role for MVP; reads are public.
+            - Implement atomic writes (write temp file then rename) and basic validation.
+            - If event count grows, measure load time and consider moving to SQLite/Postgres.
+        Detection Plan: Add validation on load (schema check) and log failures.
+        Mitigation Plan: Freeze writes during demo if needed
+        Changes since Requirements: Requirements emphasized scalability. We can separate concerns, we constrain writers and add atomic-write safeguards to keep JSON viable for MVP.
     
     6.4.4 Risk 4: [TODO: Risk name]
         Likelihood: [TODO: high/medium/low]
@@ -324,13 +335,16 @@ Optional (Future Extensions)
         Changes since Requirements: [TODO: How this has changed since Requirements document]
 
 6.5 External Feedback Process
-    [TODO: Describe how external feedback is collected and incorporated]
+
+    In this project, external feedback will be collected throughout development through various channels. Initial feedback is received from fellow students through discussions or informal demonstrations during class, and opinions are collected based on the usability and intuition of the map-based interface and calendar functions. In addition, technical feedback on the system architecture and overall design is received from the TA and the professor in charge during the milestone review process. Simple usability tests are conducted with users outside the project team. Participants are asked to perform basic tasks such as finding events, applying date filters, and checking detailed event information, while any confusion or inconvenience occurring during the process is recorded. All collected feedback is shared in team meetings and organized into actionable items and managed as GitHub Issues. Problems that seriously hinder usability or core feedback related to design are immediately addressed, and low-priority improvements are processed in stages, taking into account the project schedule and scope.
 
 6.6 Test Plan & Bugs
     6.6.1 Testing Strategy
-        Unit Testing: [TODO: Describe unit testing strategy]
-        System/Integration Testing: [TODO: Describe system/integration testing strategy]
-        Usability Testing: [TODO: Describe usability testing strategy]
+        Unit Testing:
+        
+            - Unit tests will be implemented for backend logic focus on core functionalities such as create event, data validation, filtering by date, and JSON file read/write operations. This will make individual functions behave correctly in isolation.
+            - System/Integration Testing: System testing will verify end-to-end functionality across the frontend, backend, and map interface. This includes testing API endpoints, confirming that events created in the backend appear correctly on the map and calendar, and validating that filters update both views consistently. Postman and manual API calls will be used to test backend endpoints, while browser-based testing will verify frontend integration.
+            - Usability Testing: Usability testing will be conducted through simple walkthrough sessions with users outside the project team. Participants will be asked to complete basic tasks such as locating an event, applying date filters, and viewing event details. Observed issues or user confusion will be documented and converted into GitHub Issues for tracking and resolution.
     
     6.6.2 Test Suites
         [TODO: Describe specific test suites identified to capture the requirements]
