@@ -316,14 +316,17 @@ Optional (Future Extensions)
         Mitigation Plan: Freeze writes during demo if needed
         Changes since Requirements: Requirements emphasized scalability. We can separate concerns, we constrain writers and add atomic-write safeguards to keep JSON viable for MVP.
     
-    6.4.4 Risk 4: [TODO: Risk name]
-        Likelihood: [TODO: high/medium/low]
-        Impact: [TODO: high/medium/low]
-        Evidence: [TODO: Evidence upon which you base your estimates]
-        Mitigation Steps: [TODO: Steps you are taking to reduce the likelihood or impact]
-        Detection Plan: [TODO: Plan for detecting the problem]
-        Mitigation Plan: [TODO: Mitigation plan should it occur]
-        Changes since Requirements: [TODO: How this has changed since Requirements document]
+    6.4.4 Risk 4: unauthorized logins
+        Likelihood: low
+        Impact: medium
+        Evidence: We will be using a username and password login system to verify users. It would be pretty hard for someone to break into another persons account. With the only real way being a brute forece attack. This changes however if our data is breached like above. 
+        Mitigation Steps: 
+            -allow for numbers, letters, capitals, and special characters to be used in password
+            - make passwords be atleast 8 charaaterss long. 
+            - allow for 2-factor authentication.
+        Detection Plan: Track failed logins/failed attempts
+        Mitigation Plan: only allow 5 failed login attempts in a row beffore freezing it for 1 minute.
+        Changes since Requirements: This was added since we imagine more than one person using this and we need a way of saving their information an shcedule.
     
     6.4.5 Risk 5: [TODO: Risk name]
         Likelihood: [TODO: high/medium/low]
