@@ -331,14 +331,14 @@ Optional (Future Extensions)
         Mitigation Plan: only allow 5 failed login attempts in a row beffore freezing it for 1 minute.
         Changes since Requirements: This was added since we imagine more than one person using this and we need a way of saving their information an shcedule.
     
-    6.4.5 Risk 5: [TODO: Risk name]
-        Likelihood: [TODO: high/medium/low]
-        Impact: [TODO: high/medium/low]
-        Evidence: [TODO: Evidence upon which you base your estimates]
-        Mitigation Steps: [TODO: Steps you are taking to reduce the likelihood or impact]
-        Detection Plan: [TODO: Plan for detecting the problem]
-        Mitigation Plan: [TODO: Mitigation plan should it occur]
-        Changes since Requirements: [TODO: How this has changed since Requirements document]
+    6.4.5 Risk 5: Frontend and backend integration issues
+        Likelihood: Medium
+        Impact: Medium
+        Evidence: Frontend and backend are developed separately and may have mismatched API expectations.
+        Mitigation Steps: Define API contracts early and test endpoints with Postman.
+        Detection Plan: Integration testing after each major feature merge.
+        Mitigation Plan: Fix mismatched endpoints and temporarily reduce feature scope if needed.
+        Changes since Requirements: Integration risk became clearer after mock UI development.
 
 6.5 External Feedback Process
 
@@ -431,8 +431,11 @@ Optional (Future Extensions)
 
 
 7.3 Component Interfaces
-    [TODO: Specify the interfaces between components]
 
+    Frontend communicates with the backend through RESTful HTTP APIs using JSON. 
+    The backend reads and writes event data from JSON files. 
+    The frontend uses an external map API to render locations based on data provided by the backend.
+    
 7.4 Data Storage
 
     - The system stores event data in JSON files on the server. Each event record contains fields such as:
