@@ -250,6 +250,7 @@ Optional (Future Extensions)
 6. Team Process Description (Expanded)
 
 6.1 Software Toolset
+
     - Programming Language: Python 3.x
     - Web Framework: Flask (lightweight and flexible for our MVP)
     - Database:Json
@@ -269,7 +270,9 @@ Optional (Future Extensions)
     - Kyohei Yamaguchi (Quality Assurance Tester): Designs and executes test cases, identifies bugs, and verifies that all features work as expected. Kyohei's QA role ensures the final product is reliable and user-friendly.
 
 6.3 Development Schedule and Milestones
-    [TODO: Identify milestones (external and internal), define tasks along with effort estimates (at granularity no coarser than 1-person-week units), and identify dependences among them. Use a table format.]
+
+    The team will first complete system design and architecture. Backend and frontend development will then proceed, followed by basic integration of core features such as map display and event filtering. After integration, the system will be tested and refined based on usability feedback. Documentation will be completed near the end of development. Each major stage is expected to take approximately one person-week. Later stages depend on the completion of earlier development work.
+
 
 6.4 Risk Management
 
@@ -342,6 +345,7 @@ Optional (Future Extensions)
     In this project, external feedback will be collected throughout development through various channels. Initial feedback is received from fellow students through discussions or informal demonstrations during class, and opinions are collected based on the usability and intuition of the map-based interface and calendar functions. In addition, technical feedback on the system architecture and overall design is received from the TA and the professor in charge during the milestone review process. Simple usability tests are conducted with users outside the project team. Participants are asked to perform basic tasks such as finding events, applying date filters, and checking detailed event information, while any confusion or inconvenience occurring during the process is recorded. All collected feedback is shared in team meetings and organized into actionable items and managed as GitHub Issues. Problems that seriously hinder usability or core feedback related to design are immediately addressed, and low-priority improvements are processed in stages, taking into account the project schedule and scope.
 
 6.6 Test Plan & Bugs
+
     6.6.1 Testing Strategy
         Unit Testing:
         
@@ -350,7 +354,13 @@ Optional (Future Extensions)
             - Usability Testing: Usability testing will be conducted through simple walkthrough sessions with users outside the project team. Participants will be asked to complete basic tasks such as locating an event, applying date filters, and viewing event details. Observed issues or user confusion will be documented and converted into GitHub Issues for tracking and resolution.
     
     6.6.2 Test Suites
-        [TODO: Describe specific test suites identified to capture the requirements]
+        The following test suites will be created to capture core system requirements:
+            - Event Management Tests: Verify that events can be created, edited, stored in JSON, and retrieved correctly through backend APIs.
+            - Map Rendering Tests: Confirm that event locations are displayed as pins on the map and that clicking a pin shows the correct event details.
+            - Filtering Tests: Ensure that date-based filters (e.g., Today, This Week, custom range) correctly update both the calendar view and map pins.
+            - API Endpoint Tests: Test backend endpoints for event creation, retrieval, and filtering using Postman or automated pytest requests.
+            - Usability Walkthrough Checklist: A manual checklist covering basic user flows such as viewing events, filtering by date, and accessing event details.
+
     
     6.6.3 Bug Tracking
         We will use GitHub Issues to track all bugs discovered during development, testing, and user feedback. Our bug tracking strategy includes:
@@ -407,67 +417,124 @@ Optional (Future Extensions)
 7. Software Architecture
 
 7.1 System Overview
-    [TODO: Provide an overview of the system architecture]
+
+    - The system follows a simple client-server architecture. The frontend is a web-based user interface implemented using HTML, CSS, and JavaScript, which communicates with a Flask backend through RESTful APIs. The backend handles business logic, event management, and data access. Event data is stored in JSON files on the server. A third-party map service (Google Maps or OpenStreetMap) is used to visualize event locations on the OSU campus.
+    - Users interact with the system through a browser to view events on a map and calendar interface. Administrators can add or modify events through backend endpoints. The backend retrieves event data from JSON storage and provides it to the frontend, which renders map pins and calendar entries accordingly.
+
 
 7.2 Major Components
-    [TODO: Identify and describe the major software components and their functionality at a conceptual level]
+
+    - Frontend (Web Client): Responsible for displaying the interactive map and calendar interface. It allows users to view events, apply filters, and click map pins to see event details.
+    - Backend (Flask Server): Handles application logic, processes requests from the frontend, manages event data, and exposes REST APIs for creating, retrieving, and filtering events.
+    - Data Layer (JSON Storage): Stores event information such as title, date/time, building, room, and coordinates. The backend reads from and writes to these JSON files.
+    - Map Service (External API): Provides map tiles and geolocation support used to display OSU campus locations and event pins.
+
 
 7.3 Component Interfaces
     [TODO: Specify the interfaces between components]
 
 7.4 Data Storage
-    [TODO: Describe in detail what data your system stores, and how. If it uses a database, give the high level database schema. If not, describe how you are storing the data and its organization.]
 
+    - The system stores event data in JSON files on the server. Each event record contains fields such as:
+        - event_id
+        - title
+        - description
+        - date
+        - start_time
+        - end_time
+        - building
+ 
 7.5 Architectural Assumptions
-    [TODO: If there are particular assumptions underpinning your chosen architecture, identify and describe them]
+
+    - The architecture assumes a relatively small number of concurrent users typical of a departmental tool. Most users will only read event data, while write operations are limited to administrators. It is assumed that users have access to a modern web browser and an active internet connection. The system also assumes availability of the external map API. If the map service becomes unavailable, event data can still be displayed in list format as a fallback. The MVP prioritizes simplicity and rapid development over large-scale scalability, with the understanding that the storage layer can later be replaced by a relational database if needed.
 
 7.6 Architectural Decisions
-    7.6.1 Decision 1: [TODO: Architecture decision]
-        Alternative: [TODO: Describe alternative]
-        Pros: [TODO: Pros of alternative]
-        Cons: [TODO: Cons of alternative]
-        Rationale: [TODO: Why we chose our approach]
+
+    7.6.1 Decision 1: Use Flask with a lightweight frontend
     
-    7.6.2 Decision 2: [TODO: Architecture decision]
-        Alternative: [TODO: Describe alternative]
-        Pros: [TODO: Pros of alternative]
-        Cons: [TODO: Cons of alternative]
-        Rationale: [TODO: Why we chose our approach]
+    Alternative:
+    Use a full frontend framework such as React.
+    
+    Pros of alternative:
+    - Better support for complex UI state management
+    - Easier to scale frontend features in larger applications
+    
+    Cons of alternative:
+    - Higher development complexity
+    - Longer setup time and learning curve for the team
+    
+    Rationale:
+    We chose Flask with a lightweight frontend to prioritize rapid MVP development and simplicity. This approach allows the team to focus on core functionality (map display, event filtering, and data management) without introducing unnecessary framework overhead.
+
+    
+    7.6.2 Decision 2: Use JSON file storage instead of a relational database
+        Alternative:
+        Use a relational database such as PostgreSQL or SQLite.
+        
+        Pros of alternative:
+        - Better support for concurrent writes
+        - More powerful querying capabilities
+        - Improved scalability
+        
+        Cons of alternative:
+        - Additional setup and configuration overhead
+        - Increased project complexity for an MVP
+        
+        Rationale:
+        JSON storage was selected to keep the architecture simple and lightweight for the MVP. Given the expected small number of administrators and limited data volume, JSON provides sufficient functionality while allowing faster development. The storage layer can be replaced with a database in future iterations if scalability becomes a concern.
+        
 
 
 8. Software Design
 
-8.1 Component 1: [TODO: Component name]
-    8.1.1 Packages/Classes/Units
-        [TODO: What packages, classes, or other units of abstraction form this component?]
+        8.1 Component 1: Backend
     
-    8.1.2 Responsibilities
-        [TODO: What are the responsibilities of each of those parts of the component?]
+            8.1.1 Packages/Classes/Units
+                - app.py: Initializes the Flask application and registers routes.
+                - routes.py: Defines API endpoints for retrieving, creating, and filtering events.
+                - event_service.py: Contains business logic related to event processing.
+                - data_manager.py: Handles reading and writing event data to JSON storage.
+            8.1.2 Responsibilities
+                - app.py configures the Flask server and application settings.
+                - routes.py exposes RESTful endpoints used by the frontend.
+                - event_service.py validates input data and applies filtering logic.
+                - data_manager.py manages persistent storage by loading and saving JSON files.
 
-8.2 Component 2: [TODO: Component name]
-    8.2.1 Packages/Classes/Units
-        [TODO: What packages, classes, or other units of abstraction form this component?]
-    
-    8.2.2 Responsibilities
-        [TODO: What are the responsibilities of each of those parts of the component?]
 
-8.3 Component 3: [TODO: Component name]
-    8.3.1 Packages/Classes/Units
-        [TODO: What packages, classes, or other units of abstraction form this component?]
+        8.2 Component 2: Frontend
+
+            8.2.1 Packages/Classes/Units
+                - index.html: Main entry point for the web interface.
+                - styles.css: Defines layout and visual styling.
+                - map.js: Handles map initialization, marker rendering, and user interactions.
+                - calendar.js: Manages calendar display and date-based filtering.
+                - api.js: Contains helper functions for communicating with backend APIs.
     
-    8.3.2 Responsibilities
-        [TODO: What are the responsibilities of each of those parts of the component?]
+        
+            8.2.2 Responsibilities
+                - index.html provides the overall structure of the user interface.
+                - styles.css controls visual presentation and responsiveness.
+                - map.js initializes the map, displays event pins, and handles pin click behavior.
+                - calendar.js renders the calendar view and applies date filters.
+                - api.js sends requests to backend endpoints and processes returned JSON data.
 
 [Note: Add more components as needed]
 
 
 9. Coding Guidelines
 
-9.1 Python
-    Guideline: PEP 8 -- Style Guide for Python Code (https://pep8.org/)
-    
+        9.1 Python
+            Guideline: PEP 8 -- Style Guide for Python Code (https://pep8.org/)
+            
+        
+        9.2 JavaScript
+        
+            Guideline:
+            Airbnb JavaScript Style Guide (https://airbnb.io/javascript/)
+            
+            Rationale:
+            The Airbnb JavaScript Style Guide is an industry-standard guideline that promotes clean, maintainable, and consistent JavaScript code, especially for frontend development.
+            
+            Enforcement:
+            We will use ESLint with the Airbnb configuration to automatically detect style issues. All pull requests will be reviewed to ensure compliance with the guideline.
 
-9.2 [TODO: Additional languages if any]
-    Guideline: [TODO: Link to pre-existing coding style guideline]
-    Rationale: [TODO: Briefly state why you chose this guideline]
-    Enforcement: [TODO: How you plan to enforce this guideline]
