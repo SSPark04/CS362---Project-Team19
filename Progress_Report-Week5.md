@@ -15,7 +15,7 @@
 - **what team learned:** The team learned how to dived work better  
 - **where team had trouble and where the team is stuck:** It was a bit rough getting back into the swing of things after missing 3 members in week 4.  
 
----
+--- 
 
 ## Goals planned for next week (Higher-level team tasks)
 
