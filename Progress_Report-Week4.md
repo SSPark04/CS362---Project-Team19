@@ -15,7 +15,7 @@
 ---
 
 ## Team progress and issues
-
+ 
 - We figured out all the features we want  
 - what worked  
 - A majority of the team was sick and were unable to meet.  
