@@ -262,16 +262,39 @@ Optional (Future Extensions)
     - Development Tools: VS Code / PyCharm, Postman (for API testing)
     - Deployment: Local
 
-6.2 Team Member Roles and Justification
+6.2 Team Member Roles and Responsibilities
 
-    - Charley Lotspeich (Project Researcher): Responsible for researching map APIs, event data formats, and best practices for calendar interfaces. Charley's research role ensures we make informed technical decisions and understand user needs.
-    - Sangwoo(Shawn) Park (Leader): Coordinates team efforts, makes final decisions on technical approaches, and ensures project milestones are met. As leader, Shawn will facilitate communication and resolve conflicts.
-    - Brian McCarthy (Scheduler/Organizer): Manages the project timeline, tracks progress, and organizes team meetings. Brian's organizational role ensures the team stays on schedule and all members are aware of deadlines.
-    - Kyohei Yamaguchi (Quality Assurance Tester): Designs and executes test cases, identifies bugs, and verifies that all features work as expected. Kyohei's QA role ensures the final product is reliable and user-friendly.
+To align with standard technical roles in software engineering, the team responsibilities are defined as follows:
+
+- Sangwoo (Shawn) Park – Backend Developer / Software Architect
+  Responsible for overall system architecture, backend API design and implementation using Flask, data schema definition, and integration between frontend and backend components.
+
+- Charley Lotspeich – Frontend Developer / UI Designer
+  Responsible for designing and implementing the user interface, including the interactive map and calendar views, frontend logic in JavaScript, and ensuring responsive usability.
+
+- Brian McCarthy – DevOps / Project Manager  
+  Responsible for managing the project timeline, coordinating team communication, maintaining the GitHub repository, and supporting deployment and environment setup.
+
+- Kyohei Yamaguchi – QA Engineer / Test Engineer  
+  Responsible for designing test cases, implementing automated unit tests, conducting integration and usability testing, and managing bug tracking through GitHub Issues.
+
+Each role represents a standard technical position commonly found in software development teams, and responsibilities are assigned based on individual strengths while ensuring balanced contributions across architecture, implementation, testing, and project coordination.
+
 
 6.3 Development Schedule and Milestones
 
-    The team will first complete system design and architecture. Backend and frontend development will then proceed, followed by basic integration of core features such as map display and event filtering. After integration, the system will be tested and refined based on usability feedback. Documentation will be completed near the end of development. Each major stage is expected to take approximately one person-week. Later stages depend on the completion of earlier development work.
+| Task | Owner | Estimated Effort | Dependencies |
+|------|-------|------------------|--------------|
+| Finalize system architecture and API contracts | Sangwoo | 0.5 person-week | Requirements finalized |
+| Frontend UI (map + calendar views) | Charley | 1 person-week | API contracts |
+| Backend event APIs and JSON data layer | Sangwoo | 1 person-week | Architecture |
+| Event filtering and integration | Brian | 0.5 person-week | Backend + Frontend |
+| Integration testing and bug fixing | Kyohei | 0.5 person-week | Core features complete |
+| Usability testing and feedback incorporation | Kyohei | 0.5 person-week | Integrated system |
+| Documentation (user/admin/developer guides) | All | 0.5 person-week | Features stabilized |
+
+Major milestones include architecture finalization, core feature implementation, system integration, testing, and documentation. Each task depends on completion of preceding components to ensure a structured development flow.
+
 
 
 6.4 Risk Management
@@ -319,19 +342,7 @@ Optional (Future Extensions)
         Mitigation Plan: Freeze writes during demo if needed
         Changes since Requirements: Requirements emphasized scalability. We can separate concerns, we constrain writers and add atomic-write safeguards to keep JSON viable for MVP.
     
-    6.4.4 Risk 4: unauthorized logins
-        Likelihood: low
-        Impact: medium
-        Evidence: We will be using a username and password login system to verify users. It would be pretty hard for someone to break into another persons account. With the only real way being a brute forece attack. This changes however if our data is breached like above. 
-        Mitigation Steps: 
-            -allow for numbers, letters, capitals, and special characters to be used in password
-            - make passwords be atleast 8 charaaterss long. 
-            - allow for 2-factor authentication.
-        Detection Plan: Track failed logins/failed attempts
-        Mitigation Plan: only allow 5 failed login attempts in a row beffore freezing it for 1 minute.
-        Changes since Requirements: This was added since we imagine more than one person using this and we need a way of saving their information an shcedule.
-    
-    6.4.5 Risk 5: Frontend and backend integration issues
+    6.4.4 Risk 4: Frontend and backend integration issues
         Likelihood: Medium
         Impact: Medium
         Evidence: Frontend and backend are developed separately and may have mismatched API expectations.
@@ -438,7 +449,8 @@ Optional (Future Extensions)
     
 7.4 Data Storage
 
-    - The system stores event data in JSON files on the server. Each event record contains fields such as:
+    - Each event record contains fields such as:
+
         - event_id
         - title
         - description
@@ -446,6 +458,10 @@ Optional (Future Extensions)
         - start_time
         - end_time
         - building
+        - room (optional)
+        - latitude
+        - longitude
+
  
 7.5 Architectural Assumptions
 
