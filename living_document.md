@@ -424,6 +424,7 @@ Major milestones include architecture finalization, core feature implementation,
     
     - In-app Help: Contextual help menus and tooltips within the web application interface
 
+    - (From the Feedback) Administrators will add and update events through a simple web-based admin interface exposed by the backend, allowing authorized users to submit event details (title, time, location) without directly editing JSON files.
 
 7. Software Architecture
 
