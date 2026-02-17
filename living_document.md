@@ -283,15 +283,15 @@ Each role represents a standard technical position commonly found in software de
 
 6.3 Development Schedule and Milestones
 
-| Task | Owner | Estimated Effort | Dependencies |
-|------|-------|------------------|--------------|
-| Finalize system architecture and API contracts | Sangwoo | 0.5 person-week | Requirements finalized |
-| Frontend UI (map + calendar views) | Charley | 1 person-week | API contracts |
-| Backend event APIs and JSON data layer | Sangwoo | 1 person-week | Architecture |
-| Event filtering and integration | Brian | 0.5 person-week | Backend + Frontend |
-| Integration testing and bug fixing | Kyohei | 0.5 person-week | Core features complete |
-| Usability testing and feedback incorporation | Kyohei | 0.5 person-week | Integrated system |
-| Documentation (user/admin/developer guides) | All | 0.5 person-week | Features stabilized |
+| Task | Owner | Estimated Effort | Dependencies | Finished by
+|------|-------|------------------|--------------|--------------|
+| Finalize system architecture and API contracts | Sangwoo | 0.5 person-week | Requirements finalized | a|
+| Frontend UI (map + calendar views) | Charley | 1 person-week | API contracts | a|
+| Backend event APIs and JSON data layer | Sangwoo | 1 person-week | Architecture | a|
+| Event filtering and integration | Brian | 0.5 person-week | Backend + Frontend | a|
+| Integration testing and bug fixing | Kyohei | 0.5 person-week | Core features complete | Week 8|
+| Usability testing and feedback incorporation | Kyohei | 0.5 person-week | Integrated system | Week 8 |
+| Documentation (user/admin/developer guides) | All | 0.5 person-week | Features stabilized | Week 10|
 
 Major milestones include architecture finalization, core feature implementation, system integration, testing, and documentation. Each task depends on completion of preceding components to ensure a structured development flow.
 
