@@ -283,7 +283,7 @@ Each role represents a standard technical position commonly found in software de
 
 6.3 Development Schedule and Milestones
 
-| Task | Owner | Estimated Effort | Dependencies | Finished by
+| Task | Owner | Estimated Effort | Dependencies | Finish by
 |------|-------|------------------|--------------|--------------|
 | Finalize system architecture and API contracts | Sangwoo | 0.5 person-week | Requirements finalized | a|
 | Frontend UI (map + calendar views) | Charley | 1 person-week | API contracts | a|
