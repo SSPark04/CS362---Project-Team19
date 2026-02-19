@@ -51,3 +51,19 @@ The repository is organized as follows:
 ### Install Dependencies
 
     pip install -r requirements.txt
+
+## Adding New Tests
+
+- All test files must be placed in the `tests/` directory.
+- Test files should follow the naming pattern:
+  - `test_<feature>.py`
+  - Example: `test_events.py`
+
+Each test should:
+
+- Clearly describe its purpose
+- Be independent of other tests
+- Use meaningful assertion messages where applicable
+
+When adding new features, corresponding tests must be added.
+
