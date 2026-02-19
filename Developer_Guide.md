@@ -51,6 +51,7 @@ The repository is organized as follows:
 ### Install Dependencies
 
     pip install -r requirements.txt
+    python app.py
 
 ## Adding New Tests
 
