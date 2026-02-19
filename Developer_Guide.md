@@ -73,3 +73,8 @@ Each test should:
 
 When adding new features, corresponding tests must be added.
 
+### Release Process
+ - For the releases of the website we need to update the version number to 1.0. As this is the full version of our site and the first time it is pushed out.
+ - Sanity checking will be used after each update and release of the product. It makes no sense to go through with and update to add a feature if doing so breaks the whole program. This test won’t be as rigorous as normal     testing. However it should be able to catch most functionality mistakes.
+
+
