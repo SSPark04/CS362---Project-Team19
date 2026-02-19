@@ -123,6 +123,17 @@ Docs: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-pytho
    gunicorn --bind 127.0.0.1:8000 app:app --daemon
    ```
 ---
+### How to Use the Software
+   1. The user will need to create/login into an account.
+   2. Once successfully logged in the user will be able to see their events displayed
+   3. They may need to provide an OSU email address(this is a work in progress and isn’t fully decided in the group)
+   4. The user can view the map to see where events are going on
+   5. The user can search for events in the event sorter. This is done either by entering the name of an event in which case it will be displayed, searching using tags, dates, or even time. This can also be done to hide certain events.
+   6. The user's profile will be saved automatically so they don’t have to re-enter information.
+   7. The user can log out or just close the website. (Account system is work in progress)
+
+---
+---
 ## Bug Reporting
 
 - If a bug is found, it can be reported through the project issue tracker on GitHub
