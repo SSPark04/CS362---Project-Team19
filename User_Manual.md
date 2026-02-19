@@ -122,3 +122,26 @@ Docs: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-pytho
    ```bash
    gunicorn --bind 127.0.0.1:8000 app:app --daemon
    ```
+---
+## Bug Reporting
+
+- If a bug is found, it can be reported through the project issue tracker on GitHub
+- Submit a separate report for each issue and check that it isn't an already existing issue
+- Provide a clear summary describing the problem
+- Step-by-step instructions on how to reproduce the bug
+- Include the desired result and the actual result
+- Provide environment details (OS, browser, etc.)
+- If available, provide screenshots and error messages.
+
+
+---
+
+## Known Bugs / Limitations
+
+### Limitations
+- Only showing OSU EECS events.
+- Map limited to the OSU Corvallis campus.
+- Can only be accessed on a desktop and not on a mobile device.
+
+### Known Bugs
+- None currently, will update when they become known.
