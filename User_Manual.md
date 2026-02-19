@@ -1,1 +1,124 @@
+# Busy Beaver Calendar – User Manual
 
+## High-Level Description
+Busy Beaver Calendar is a web-based application for OSU EECS students to visualize EECS events on an interactive map. The system aggregates EECS events such as career events, meetups, and seminars from weekly email, and displays them on a campus map. This tool allows students to quickly identify where and when events are happening relative to their current location, helping them manage their schedule and engage more effectively with the EECS community. 
+
+---
+
+## Installation (Local)
+
+### Prerequisites:
+* Python: Version 3.10 or higher.
+* pip: Python package manager (latest version recommended).
+* Git: To clone the repository.
+* Web Browser: Chrome, Firefox, or Safari.
+* Database: No external database installation (like MySQL/PostgreSQL) is required. The system uses a JSON-based storage (data/events.json) which is included in the repository.
+
+### Installation Steps
+1. Clone the Repository:
+   ```bash
+   git clone https://github.com/SSPark04/CS362---Project-Team19
+   cd CS362---Project-Team19
+   ```
+
+2. Create a Virtual Environment:
+   It is highly recommended to use a virtual environment to avoid library conflicts.
+   ```bash
+   python -m venv venv
+   # To activate:
+   # Windows: venv\Scripts\activate
+   # macOS/Linux: source venv/bin/activate
+   ```
+
+3. Install Dependencies:
+   Install all required libraries using the provided requirements file:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Environment Configuration:
+   Create a .env file in the root directory and add your API keys (e.g., Map provider keys) if applicable.
+
+---
+
+## Installation (AWS)
+
+Docs: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
+
+### Prerequisites:
+* AWS account
+* EC2 Instance (Linux is recommended)
+* Python >= 3.10
+* Nginx
+
+### How to run server step-by-step Setup
+1. Create Instance:
+   Go to this site and create instance: https://www.geeksforgeeks.org/devops/amazon-ec2-creating-an-elastic-cloud-compute-instance/
+
+2. Connect to your instance:
+   Open your terminal (search terminal on your device) and type following command:
+   ```bash
+   chmod 400 my-key.pem
+   ssh -i "my-key.pem" ubuntu@<your public ip address> 
+   ```
+   For more information please read Steps to Connect Terminal Using SSH-Key section in the following page:
+   https://www.geeksforgeeks.org/devops/amazon-ec2-creating-an-elastic-cloud-compute-instance/ 
+
+3. In your AWS Linux Terminal:
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   sudo apt install -y python3-pip python3-venv nginx git
+   ```
+
+4. Clone repository:
+   ```bash
+   git clone https://github.com/SSPark04/CS362---Project-Team19
+   cd CS362---Project-Team19
+   ```
+
+5. Python env setting:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   pip install gunicorn
+   ```
+
+---
+
+## How to Run the Software
+
+### Local:
+1. Start the local server:
+   ```bash
+   python app.py
+   ```
+2. Access following URL:
+   http://127.0.0.1:<opened port> (usually 3000 / 5000 / 8000)
+3. Stop the system:
+   Ctrl + C
+
+### AWS:
+1. Configure Nginx (Web Server):
+   Create a config file at /etc/nginx/sites-available/eventmap:
+   ```nginx
+   server {
+       listen 80;
+       server_name your-aws-public-ip;
+       location / {
+           proxy_pass http://127.0.0.1:8000;
+           proxy_set_header Host $host;
+       }
+   }
+   ```
+
+2. Enable and restart:
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/eventmap /etc/nginx/sites-enabled
+   sudo systemctl restart nginx
+   ```
+
+3. Run the application:
+   ```bash
+   gunicorn --bind 127.0.0.1:8000 app:app --daemon
+   ```
