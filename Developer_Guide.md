@@ -56,6 +56,9 @@ The repository is organized as follows:
 - Naming convention: Include Type of test(unit,stress,implementation, ect), program being tested, and the test number if it's a part of a suite.
 - A test harness should be used to make running a lot of tests easier. Not every section needs a test harness. One section that should have a test harness is the event sorter. 
         Another that should have one is the auto event updater for the map and calendar.
+- Tests are implemented using pytest and located in the tests/ directory.
+- To run all tests:
+   - pytest
 
 
 ## Adding New Tests
