@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Busy Beaver Calendar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Busy Beaver Calendar</h1>
+    </header>
+
+    <main class="grid">
+      <section class="box">
+        <h2>Calendar (example)</h2>
+
+        <table class="calendar" aria-label="Calendar table">
+          <thead>
+            <tr>
+              <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mutedCell">26</td><td class="mutedCell">27</td><td class="mutedCell">28</td><td class="mutedCell">29</td><td class="mutedCell">30</td><td class="mutedCell">31</td><td>1</td>
+            </tr>
+            <tr>
+              <td>2<div class="dot" title="event"></div></td><td>3<div class="dot" title="event"></div></td><td>4<div class="dot" title="event"></div></td><td>5</td><td>6</td><td>7</td><td>8</td>
+            </tr>
+            <tr>
+              <td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+            </tr>
+            <tr>
+              <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td>
+            </tr>
+            <tr>
+              <td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td class="mutedCell">1</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Events (example)</h2>
+        <ul class="events">
+          <li><strong>Feb 2</strong> — Learn from an Alum (KEC 1007)</li>
+          <li><strong>Feb 3</strong> — Getting Hired in the Semiconductor Industry (MU Ballroom)</li>
+          <li><strong>Feb 4</strong> — OSU Winter Virtual Career &amp; Internship Fair (Virtual)</li>
+        </ul>
+      </section>
+
+      <section class="box">
+        <h2>Event Map (image)</h2>
+        <p class="muted">
+          Base map: <a href="https://technology.oregonstate.edu/services/campus-map" target="_blank" rel="noreferrer">OSU Campus Map</a>
+        </p>
+        <img class="mapImg" src="{{ url_for('static', filename='images/event-map.png') }}" alt="OSU campus map" />
+      </section>
+    </main>
+
+    <footer class="footer"><small>Busy Beaver Calendar — Team 19</small></footer>
+  </body>
+</html>
