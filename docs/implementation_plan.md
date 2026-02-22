@@ -3,14 +3,20 @@
 ## 1. Current State (Completed)
 
 - Flask base application is set up and running
-  - `app.py` — Flask entry point
+  - `app.py` — Flask entry point with API Blueprint registration
   - `templates/index.html` — Main page template (converted from mock_web_page)
   - `static/styles.css` — Styling
   - `static/images/` — Image assets
-  - `requirements.txt` — Python dependencies (`Flask==3.1.3`)
-  - `.gitignore` — Excludes `venv/`, `__pycache__/`, etc.
+  - `requirements.txt` — Python dependencies (`Flask==3.1.3`, `pytest==9.0.2`)
+  - `.gitignore` — Excludes `venv/`, `__pycache__/`, `.pytest_cache/`, etc.
+- Full backend is implemented and tested (55 tests passing)
+  - `data_manager.py` — JSON CRUD with atomic writes
+  - `event_service.py` — Validation, date filtering, sorting
+  - `routes.py` — REST API endpoints (Flask Blueprint)
+  - `data/events.json` — Sample event data (5 events)
+  - `tests/` — Unit and integration tests for all backend modules
 - The dev server runs at `http://127.0.0.1:5000`
-- Branch: `feature/background`
+- Documents and reports organized under `docs/` and `docs/reports/`
 
 ---
 
@@ -21,6 +27,7 @@ CS362---Project-Team19/
 ├── app.py                     # Flask init + Blueprint registration
 ├── routes.py                  # REST API endpoint definitions
 ├── event_service.py           # Business logic (filter, sort, validate)
+├── event_sort.py              # Event dataclass and sort logic (moved from EventSorter/)
 ├── data_manager.py            # JSON file CRUD operations
 ├── email_parser.py            # Parse event info from Outlook emails
 ├── requirements.txt
@@ -45,7 +52,6 @@ CS362---Project-Team19/
 │   ├── test_event_service.py
 │   └── test_routes.py
 │
-├── EventSorter/               # Existing sort logic (to be merged into event_service.py)
 └── mock_web_page/             # Original static mock (reference only)
 ```
 
@@ -65,8 +71,8 @@ Each event in `data/events.json` follows this structure (defined in living docum
   "end_time": "15:30",
   "building": "KEC",
   "room": "1007",
-  "latitude": 12.3456,
-  "longitude": -123.3456
+  "latitude": 0,
+  "longitude": 0
 }
 ```
 
@@ -91,6 +97,8 @@ All endpoints are prefixed with `/api`.
     - `?filter=today` — Events happening today
     - `?filter=week` — Events this week
     - `?start=YYYY-MM-DD&end=YYYY-MM-DD` — Custom date range
+    - `?sort=title|date|start_time` — Sort by field
+    - `?order=asc|desc` — Sort order (default: asc)
   - Response: `200` with `[{event}, {event}, ...]`
 
 - **GET /api/events/\<event_id\>**
@@ -130,9 +138,15 @@ All endpoints are prefixed with `/api`.
 - **`event_service.py`**
   - Contains all business logic
   - Validates event data before saving
-  - Filters events by date range, tags, etc.
-  - Sorts events (integrates `EventSorter/Event_sort.py` logic)
+  - Filters events by date range
+  - Sorts events by importing and using `event_sort.py` (Event dataclass + sort logic)
+  - Converts between event dicts and Event dataclass objects via `dict_to_event()`
   - Calls `data_manager.py` for data access
+
+- **`event_sort.py`** (moved from `EventSorter/Event_sort.py`)
+  - Defines the `Event` dataclass (name, date, time, tags)
+  - Provides `sort_events()` function for sorting Event objects by name, date, time, or tags
+  - Used internally by `event_service.py`
 
 - **`data_manager.py`**
   - Reads and writes `data/events.json`
@@ -226,18 +240,20 @@ All endpoints are prefixed with `/api`.
 
 ## 8. Implementation Order
 
-### Phase 1 — Data Layer (Start here)
+### Phase 1 — Data Layer (COMPLETED)
 
-- Sangwoo creates `data/events.json` and `data_manager.py`
-- This is the foundation; everything else depends on it
+- `data/events.json` created with 5 sample events
+- `data_manager.py` implemented with all CRUD functions and atomic writes
+- 16 unit tests passing (test_data_manager.py)
 
-### Phase 2 — API Layer
+### Phase 2 — API Layer (COMPLETED)
 
-- Sangwoo creates `routes.py` and `event_service.py`
-- Sangwoo updates `app.py` to register the Blueprint
-- Kyohei writes tests for Phase 1 and Phase 2
+- `event_service.py` implemented with validation, date filtering, and sorting
+- `routes.py` implemented as Flask Blueprint with all REST endpoints
+- `app.py` updated to register the Blueprint
+- 24 unit tests (test_event_service.py) + 15 integration tests (test_routes.py) passing
 
-### Phase 3 — Frontend (Can start once API spec is agreed)
+### Phase 3 — Frontend (Can start now — API is ready)
 
 - Charley creates all JS files and updates the template
 - Charley can use mock data or a running local server to test
@@ -295,4 +311,7 @@ python app.py
 
 # Open in browser
 # http://127.0.0.1:5000
+
+# Run all tests
+python -m pytest tests/ -v
 ```
