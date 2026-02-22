@@ -153,6 +153,7 @@ Docs: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-pytho
 - Only showing OSU EECS events.
 - Map limited to the OSU Corvallis campus.
 - Can only be accessed on a desktop and not on a mobile device.
+- Event coordinates (latitude/longitude) are placeholder values (0) until real building coordinates are added.
 
 ### Known Bugs
 - None currently, will update when they become known.
