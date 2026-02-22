@@ -29,12 +29,12 @@ CS362---Project-Team19/
 ├── event_service.py           # Business logic (filter, sort, validate)
 ├── event_sort.py              # Event dataclass and sort logic (moved from EventSorter/)
 ├── data_manager.py            # JSON file CRUD operations
-├── email_parser.py            # Parse event info from Outlook emails
-├── requirements.txt
+├── email_parser.py            # Parse event info from Outlook emails (future)
+├── requirements.txt           # Flask, pytest
 ├── .gitignore
 │
 ├── data/
-│   └── events.json            # Event data storage (JSON)
+│   └── events.json            # Event data storage (5 sample events)
 │
 ├── templates/
 │   └── index.html             # Main page (Jinja2 template)
@@ -42,15 +42,27 @@ CS362---Project-Team19/
 ├── static/
 │   ├── styles.css
 │   ├── js/
-│   │   ├── api.js             # Fetch wrapper for backend API calls
-│   │   ├── map.js             # Map rendering (Leaflet.js)
-│   │   └── calendar.js        # Calendar display + date filtering
+│   │   ├── api.js             # Fetch wrapper for backend API calls (future)
+│   │   ├── map.js             # Map rendering (Leaflet.js) (future)
+│   │   └── calendar.js        # Calendar display + date filtering (future)
 │   └── images/
+│       ├── event-map.png
+│       └── mock_website.png
 │
 ├── tests/
-│   ├── test_data_manager.py
-│   ├── test_event_service.py
-│   └── test_routes.py
+│   ├── __init__.py
+│   ├── test_data_manager.py   # 16 tests
+│   ├── test_event_service.py  # 24 tests
+│   └── test_routes.py         # 15 tests
+│
+├── docs/
+│   ├── Developer_Guide.md
+│   ├── User_Manual.md
+│   ├── implementation_plan.md
+│   ├── living_document.md
+│   ├── Project_SlideShow.pdf
+│   └── reports/
+│       ├── Progress_Report-Week*.md
 │
 └── mock_web_page/             # Original static mock (reference only)
 ```
