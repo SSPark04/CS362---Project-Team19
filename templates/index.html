@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Busy Beaver Calendar</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
   <body>
     <header class="header">
@@ -53,10 +55,12 @@
         <p class="muted">
           Base map: <a href="https://technology.oregonstate.edu/services/campus-map" target="_blank" rel="noreferrer">OSU Campus Map</a>
         </p>
-        <img class="mapImg" src="{{ url_for('static', filename='images/event-map.png') }}" alt="OSU campus map" />
+        <div id="map" class="mapImg"></div>      
       </section>
     </main>
 
     <footer class="footer"><small>Busy Beaver Calendar — Team 19</small></footer>
+    <script type="module" src="{{ url_for('static', filename='js/api.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/map.js') }}"></script>
   </body>
 </html>
