@@ -89,21 +89,28 @@
 
 ### Goals planned for this week
 
-- Finalize presentation slides and technical explanations  
-- Refine system architecture and design documentation  
-
-### Team progress and issues
-
-- Organized presentation content and finalized core features  
-- Led architecture and design sections in the living document  
-- Participated in meetings to divide roles and establish implementation plans  
-- Learned more about software architecture patterns and system modularity  
-
-### Goals planned for next week (Lower-level individual tasks)
-
 - Help kick off implementation phase  
 - Review architecture/design and assist with technical integration (Flask + overall system flow)  
 
+### Team progress and issues
+
+- **what team member did:**  
+  - Created a new branch 'feature/api-call' to implement frontend API integration without affecting the main branch
+  - Implemented `static/js/api.js`: a fetch-based helper module covering all rest endpoints with support for date filtering and sorting options  
+  - Implemented `static/js/map.js`: integrated Leaflet.js with OpenStreetMap to render an interactive OSU campus map and place event pins using latitude/longitude from the backend  
+  - Implemented `static/js/calendar.js`: dynamic calendar grid rendering and event list population using live API data, with All/Today/This Week filter support  
+  - Updated `templates/index.html` to load Leaflet CDN and connect all JS modules  
+  - Updated `data/events.json` with real OSU building coordinates (KEC, MU, GLK) for accurate map pin placement  
+  - Set up a Python virtual environment (`venv`) with `requirements.txt` for consistent local development  
+  - Verified end-to-end functionality: API calls returning 200, map pins rendering correctly with popup details on click  
+- **what worked:** Building `api.js` as a shared module made it straightforward to reuse across `map.js` and `calendar.js`; Leaflet.js integrated cleanly with minimal configuration  
+- **what team member learned:** How to structure ES module imports in a Flask-served static environment, and how Leaflet.js handles map tile rendering and marker popups  
+- **where stuck:** Map pin coordinates required manual lookup per building; a geocoding integration (e.g. Nominatim) could automate this in a future iteration  
+
+### Goals planned for next week (Lower-level individual tasks)
+
+- Conduct integration testing once Charley connects the calendar/event list UI to the live API  
+- Support team members with API usage and JS module questions  
 ---
 
 ## Team Member 4: Charley Lotspeich
