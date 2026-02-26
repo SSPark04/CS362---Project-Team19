@@ -407,7 +407,36 @@ Major milestones include architecture finalization, core feature implementation,
             3. Write a function whose name starts with test_.
             4. Run locally to verify it passes:     python -m pytest tests/test_<feature>.py -v
             5. Commit and push — CI will automatically pick it up.
-    6.6.5 CI
+    6.6.5  CI / Continuous Integration
+        - We use pytest as our test automation framework
+        - pytest is the most widely used Python testing framework, easy to set up, and works well with Flask's test client
+        - All test files are in the tests/ directory and follow the naming pattern test_<feature>.py
+        - To add a new test, create a file in tests/ and run pytest tests/ -v locally to verify
+        
+        CI Service
+        
+        - We chose GitHub Actions as our CI service
+        - Our repository is already on GitHub, so GitHub Actions requires no external account or setup — just a YAML file in the repo
+        
+        How It Works
+        
+        - The CI configuration file is .github/workflows/test.yml
+        - GitHub automatically detects this file and runs the workflow
+        - No additional settings or linking is required
+        
+        What Triggers a CI Build
+        
+        - Any push to the main branch
+        - Any pull request targeting the main branch
+        
+        What Runs in a CI Build
+        
+        - Checks out the repository
+        - Sets up Python 3.13
+        - Installs dependencies from requirements.txt
+        - Runs pytest tests/ -v (all tests)
+        
+        We chose GitHub Actions because our repo is on GitHub, it requires zero external setup, and it handles our needs (run pytest on push/PR) with minimal configuration.
 6.7 Documentation Plan
     We plan to deliver the following documentation with the system:
     
