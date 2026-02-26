@@ -1,4 +1,4 @@
-from email_to_calendar import parse_email_to_events, events_to_ics
+from email_parser import parse_email_to_events, events_to_ics
 
 def test_system_end_to_end():
     email = """
