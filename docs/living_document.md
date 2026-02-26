@@ -393,7 +393,9 @@ Major milestones include architecture finalization, core feature implementation,
         - Milestone Tracking: Critical bugs will be linked to project milestones to ensure timely resolution
         
         - Testing Integration: Bugs discovered during testing will be logged as GitHub Issues with links to relevant test cases
-
+    6.6.4 Test-automation
+        - Testing-infastructure
+            * We used Pytest for our automation infrastructure.
 6.7 Documentation Plan
     We plan to deliver the following documentation with the system:
     
