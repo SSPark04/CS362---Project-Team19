@@ -1,6 +1,6 @@
 import pytest
 from datetime import date, time
-from event_sorter import Event, sort_events
+from event_sort import Event, sort_events
 
 
 def test_invalid_sort_key():

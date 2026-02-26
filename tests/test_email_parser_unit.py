@@ -1,6 +1,6 @@
 import re
 from datetime import datetime
-from email_to_calendar import (
+from email_parser import (
     _normalize_month_day_to_date,
     _parse_time_on_date,
     extract_events_from_text,
