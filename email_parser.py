@@ -110,31 +110,35 @@ def extract_events_from_text(email_text: str) -> List[Dict]:
             "location": location,
             "description": description,
             "tags": tags,
-            "source_excerpt": joined[m.start():m.end()+200][:300]
+            "source_excerpt": joined[m.start():m.end()+200][:300],
+            "span": (m.start(), m.end())
         })
 
     # Second pass: single-time events (no end time)
     for m in SINGLE_TIME_PATTERN.finditer(joined):
-        # skip if already captured by range pattern (overlap)
-        if any(m.start() >= (e["start"].timestamp() if isinstance(e["start"], float) else 0) for e in events):
-            pass
+    # skip if this single-time match is inside a range match
+        if any(start <= m.start() <= end for (start, end) in [ev["span"] for ev in events]):
+            continue
+    
         month = m.group("month")
         day = m.group("day")
         start_str = m.group("start")
         location = (m.group("location") or "").strip()
+    
         base_date = _normalize_month_day_to_date(month, day)
         start_dt = _parse_time_on_date(base_date, start_str)
-        end_dt = start_dt + timedelta(hours=1)  # default 1 hour
-        title = "Event"
+        end_dt = start_dt + timedelta(hours=1)
+    
         events.append({
             "id": str(uuid.uuid4()),
-            "title": title,
+            "title": "Event",
             "start": start_dt,
             "end": end_dt,
             "location": location,
             "description": "",
             "tags": [],
-            "source_excerpt": joined[m.start():m.end()+200][:300]
+            "source_excerpt": joined[m.start():m.end()+200][:300],
+            "span": (m.start(), m.end())
         })
 
     # Final cleanup: sort by start
