@@ -8,8 +8,8 @@
     "end_time": "15:30",
     "building": "KEC",
     "room": "1007",
-    "latitude": 44.5675,
-    "longitude": -123.2778
+    "latitude": 44.5660,
+    "longitude": -123.2780
   },
   {
     "event_id": "evt-002",
@@ -21,7 +21,7 @@
     "building": "MU",
     "room": "Ballroom",
     "latitude": 44.5651,
-    "longitude": -123.2778
+    "longitude": -123.2790
   },
   {
     "event_id": "evt-003",
@@ -44,8 +44,8 @@
     "end_time": "12:00",
     "building": "KEC",
     "room": "1001",
-    "latitude": 44.5675,
-    "longitude": -123.2778
+    "latitude": 44.5660,
+    "longitude": -123.2780
   },
   {
     "event_id": "evt-005",
