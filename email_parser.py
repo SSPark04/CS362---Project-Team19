@@ -196,6 +196,6 @@ def parse_email_to_events(email_text: str) -> List[Dict]:
         if ev["title"] == "Event":
             # try to assign a heading
             if headings:
-                ev["title"] = headings[0].title()
+                ev["title"] = headings[0].strip().title()
     return events
 
