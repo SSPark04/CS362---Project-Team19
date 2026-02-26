@@ -393,9 +393,21 @@ Major milestones include architecture finalization, core feature implementation,
         - Milestone Tracking: Critical bugs will be linked to project milestones to ensure timely resolution
         
         - Testing Integration: Bugs discovered during testing will be logged as GitHub Issues with links to relevant test cases
-    6.6.4 Test-automation
-        - Testing-infastructure
-            * We used Pytest for our automation infrastructure.
+    6.6.4 Test Automation Infrastructure
+    
+        Testing Framework: pytest
+    
+        Justification:
+            pytest was chosen as our test automation framework because:
+            - Our project is built on Python and Flask, so pytest integrates natively without additional configuration.
+            - Flask provides a built-in test client that works seamlessly with pytest, allowing API endpoint testing without running a live server.
+        How to add a new test:
+            1. Create a new file in the tests/ directory following the naming pattern:     test_<feature>.py
+            2. Import the module you want to test at the top of the file.
+            3. Write a function whose name starts with test_.
+            4. Run locally to verify it passes:     python -m pytest tests/test_<feature>.py -v
+            5. Commit and push — CI will automatically pick it up.
+    6.6.5 CI
 6.7 Documentation Plan
     We plan to deliver the following documentation with the system:
     
