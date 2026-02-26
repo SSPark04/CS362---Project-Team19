@@ -40,3 +40,22 @@ async function loadMarkers() {
 }
 
 loadMarkers();
+
+// show user's current location on the map
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+
+    var userIcon = L.divIcon({
+      className: 'user-location-icon',
+      html: '<div style="background:red;width:14px;height:14px;border-radius:50%;border:3px solid white;box-shadow:0 0 6px rgba(0,0,0,0.3);"></div>',
+      iconSize: [20, 20],
+      iconAnchor: [10, 10],
+    });
+
+    L.marker([lat, lng], { icon: userIcon })
+      .addTo(map)
+      .bindPopup('You are here');
+  });
+}
