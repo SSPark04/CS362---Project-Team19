@@ -68,20 +68,21 @@
 
 ### Goals planned for this week
 
-- Finish slides  
-- Review Week 7 materials  
-- Start creating skeleton code  
+- Finished eevent sorter  
+- Finished Email parser  
+- Add test suits for both  
 
 ### Team progress and issues
 
-- **what team member did:** Finished slides on risk  
-- **what worked:** Completing slides and memorizing presentation sections  
-- **what team member learned:** How to present a more technical presentation  
+- **what team member did:** Built the event sorter and email parser functionality  
+- **what worked:** I found that the documention we laid out was helpfull in implementing this. 
+- **what team member learned:** How to integrate smaller level functionality into a larger project  
 
 ### Goals planned for next week (Lower-level individual tasks)
 
-- Start implementing login system in 5 days  
-- Review Outlook and email integration in 6 days  
+- Finnish automatic email update 3 days 
+- Deing more test for the email and other function to get ready fo intial build 4 days
+  
 
 ---
 
