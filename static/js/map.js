@@ -9,6 +9,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
+const markerLayer = L.layerGroup().addTo(map);
+
 // build popup content for an event
 function buildPopup(event) {
   const location = event.room
@@ -22,22 +24,30 @@ function buildPopup(event) {
 }
 
 // fetch events and place a marker for each one that has valid coordinates
+function renderMarkers(events) {
+  markerLayer.clearLayers();
+
+  for (const event of events) {
+    if (!event.latitude || !event.longitude) continue;
+
+    L.marker([event.latitude, event.longitude])
+      .addTo(markerLayer)
+      .bindPopup(buildPopup(event));
+  }
+}
+
 async function loadMarkers() {
   try {
-    const events = await getEvents();
-
-    for (const event of events) {
-      // skip virtual or unset coordinates
-      if (!event.latitude || !event.longitude) continue;
-
-      L.marker([event.latitude, event.longitude])
-        .addTo(map)
-        .bindPopup(buildPopup(event));
-    }
+    const events = await getEvents({ sort: 'date', order: 'asc' });
+    renderMarkers(events);
   } catch (err) {
     console.error('Failed to load map markers:', err);
   }
 }
+
+document.addEventListener('events:filtered', (evt) => {
+  renderMarkers(evt.detail || []);
+});
 
 loadMarkers();
 

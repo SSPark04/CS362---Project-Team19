@@ -29,3 +29,16 @@ def test_index_filter_buttons():
     assert 'data-filter="today"' in html
     assert 'data-filter="week"' in html
     assert 'data-filter="all"' in html
+
+
+def test_index_custom_range_controls_present():
+    html = read_index()
+    assert 'id="rangeStart"' in html
+    assert 'id="rangeEnd"' in html
+    assert 'id="applyRangeBtn"' in html
+    assert 'id="rangeError"' in html
+
+
+def test_index_contains_map_script():
+    html = read_index()
+    assert "map.js" in html, "map.js script tag should be present"

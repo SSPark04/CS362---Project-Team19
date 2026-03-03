@@ -1,4 +1,4 @@
-import { getEvents, getTodaysEvents, getWeekEvents } from './api.js';
+import { getEvents, getTodaysEvents, getWeekEvents, getEventsByRange } from './api.js';
 
 // format date string to "Feb 2" style
 function formatDateLabel(dateStr) {
@@ -30,6 +30,12 @@ function renderEventList(events) {
     `;
     list.appendChild(li);
   }
+}
+
+function notifyFilteredEvents(events) {
+  document.dispatchEvent(new CustomEvent('events:filtered', {
+    detail: events,
+  }));
 }
 
 // render current month calendar grid, marks days with events with a red dot
@@ -96,9 +102,11 @@ function renderCalendar(events) {
 // re-fetch and re-render on filter button click
 function initFilterBar() {
   const buttons = document.querySelectorAll('.filter-btn');
+  const errorEl = document.getElementById('rangeError');
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', async () => {
+      errorEl.textContent = '';
       buttons.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
 
@@ -122,7 +130,45 @@ function initFilterBar() {
 
       renderEventList(events);
       renderCalendar(events);
+      notifyFilteredEvents(events);
     });
+  });
+}
+
+function initRangeFilter() {
+  const applyBtn = document.getElementById('applyRangeBtn');
+  const startInput = document.getElementById('rangeStart');
+  const endInput = document.getElementById('rangeEnd');
+  const buttons = document.querySelectorAll('.filter-btn');
+  const errorEl = document.getElementById('rangeError');
+
+  applyBtn.addEventListener('click', async () => {
+    const start = startInput.value;
+    const end = endInput.value;
+
+    errorEl.textContent = '';
+
+    if (!start || !end) {
+      errorEl.textContent = 'Please select both start and end dates.';
+      return;
+    }
+
+    if (start > end) {
+      errorEl.textContent = 'Invalid range: end date must be on or after start date.';
+      return;
+    }
+
+    buttons.forEach((b) => b.classList.remove('active'));
+
+    try {
+      const events = await getEventsByRange(start, end);
+      renderEventList(events);
+      renderCalendar(events);
+      notifyFilteredEvents(events);
+    } catch (err) {
+      console.error('Failed to fetch range events:', err);
+      errorEl.textContent = `Error loading range events: ${err.message}`;
+    }
   });
 }
 
@@ -132,6 +178,7 @@ async function init() {
     const events = await getEvents({ sort: 'date', order: 'asc' });
     renderCalendar(events);
     renderEventList(events);
+    notifyFilteredEvents(events);
   } catch (err) {
     console.error('Failed to load events on init:', err);
     document.getElementById('eventList').innerHTML =
@@ -139,6 +186,7 @@ async function init() {
   }
 
   initFilterBar();
+  initRangeFilter();
 }
 
 init();

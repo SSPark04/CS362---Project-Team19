@@ -152,6 +152,14 @@ class TestGetEvents:
         titles = [e["title"] for e in data]
         assert "Career Fair" not in titles
 
+    def test_get_events_filter_by_invalid_range_returns_empty(self, client, sample_events):
+        """
+        GET /api/events with start > end should return an empty result.
+        """
+        response = client.get("/api/events?start=2026-02-20&end=2026-02-10")
+        assert response.status_code == 200
+        assert response.get_json() == []
+
 
 # --- Tests for GET /api/events/<id> ---
 

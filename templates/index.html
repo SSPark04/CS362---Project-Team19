@@ -20,7 +20,11 @@
           <button class="filter-btn active" data-filter="all">All</button>
           <button class="filter-btn" data-filter="today">Today</button>
           <button class="filter-btn" data-filter="week">Week</button>
+          <input type="date" id="rangeStart" aria-label="Range start date" />
+          <input type="date" id="rangeEnd" aria-label="Range end date" />
+          <button id="applyRangeBtn" type="button">Apply Range</button>
         </div>
+        <p id="rangeError" class="muted" aria-live="polite"></p>
 
         <table class="calendar" aria-label="Calendar table">
           <thead>
