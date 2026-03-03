@@ -119,7 +119,7 @@ Start the Flask app from repository root:
 python app.py
 ```
 
-Then open:
+Then open in a browser:
 
 ```text
 http://127.0.0.1:5000/
