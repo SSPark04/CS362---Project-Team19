@@ -25,15 +25,29 @@ function buildPopup(event) {
 
 // fetch events and place a marker for each one that has valid coordinates
 function renderMarkers(events) {
-  markerLayer.clearLayers();
-
-  for (const event of events) {
-    if (!event.latitude || !event.longitude) continue;
-
-    L.marker([event.latitude, event.longitude])
-      .addTo(markerLayer)
-      .bindPopup(buildPopup(event));
-  }
+    markerLayer.clearLayers();
+  
+    const groupedEvents = {};
+    for (const event of events) {
+      if (!event.latitude || !event.longitude) continue;
+      const key = `${event.latitude},${event.longitude}`;
+      if (!groupedEvents[key]) groupedEvents[key] = [];
+      groupedEvents[key].push(event);
+    }
+  
+    for (const key in groupedEvents) {
+      const evts = groupedEvents[key];
+      const [lat, lng] = key.split(',').map(Number);
+  
+      let popupContent = "";
+      evts.forEach(e => {
+        popupContent += buildPopup(e) + "<hr>";
+      });
+  
+      L.marker([lat, lng])
+        .addTo(markerLayer)
+        .bindPopup(popupContent);
+    }
 }
 
 async function loadMarkers() {
