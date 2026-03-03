@@ -117,15 +117,27 @@
 
 ### Goals planned for this week
 
-- Contribute to core feature slides and architecture discussion  
-- Help finalize presentation content  
+- Complete Milestone 6 beta readiness tasks for in-class testers  
+- Help make one full operational use case (3.4) testable end-to-end  
+- Improve project documentation so other students can run and test without team support  
 
 ### Team progress and issues
 
-- Worked on core feature and architecture slides (Slides 8–9)  
-- Helped refine system features including map interaction, calendar view, and filtering logic  
-- Participated in discussions about client-server architecture and REST API design  
+- **what team member did:**  
+  - Implemented Use Case 3.4 behavior in the frontend by adding custom date-range controls (`rangeStart`, `rangeEnd`, `Apply Range`) in `templates/index.html`  
+  - Updated `static/js/calendar.js` to support custom range filtering, invalid-range validation messaging, and filtered-event synchronization  
+  - Updated `static/js/map.js` so map pins refresh to match the currently filtered event set (All/Today/Week/custom range), while preserving user geolocation marker behavior  
+  - Added and updated tests for beta coverage: `tests/test_frontend.py` (range controls + map script checks) and `tests/test_routes.py` (invalid date-range API behavior)  
+  - Ran automated verification successfully (`pytest` full suite passing) before release updates  
+  - Expanded top-level `README.md` with clear setup/build/test/run instructions, operational use case declaration, and in-class beta testing steps for non-team students  
+  - Added `beta-testing/README.md` template so external tester feedback can be stored in the required repository folder  
+  - Resolved rebase conflict in `static/js/map.js` and completed push to `main` after integrating remote updates  
+- **what worked:** Clear README instructions plus virtual environment setup made onboarding predictable for class beta testers; syncing map pins with calendar filters completed the full 3.4 flow across frontend + backend  
+- **what team member learned:** how to connect UI filtering state to multiple frontend components through shared event updates  
+- **where stuck:** No major blockers remain; next risk is handling and triaging external beta feedback quickly during in-class testing  
 
 ### Goals planned for next week (Lower-level individual tasks)
 
-- Begin assigned implementation tasks  
+- Collect in-class beta feedback and log entries in `beta-testing/`  
+- Convert tester findings into GitHub issues with priority labels  
+- Fix highest-impact usability/documentation issues for final release  
