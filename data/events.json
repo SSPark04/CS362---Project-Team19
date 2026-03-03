@@ -68,8 +68,8 @@
     "end_time": "17:00",
     "building": "PFSC",
     "room": "Forestry Helpdesk (209)",
-    "latitude": 44.5631,
-    "longitude": -123.2847
+    "latitude": 44.566467,
+    "longitude": -123.285294
   },
   {
     "event_id": "evt-007",
@@ -116,7 +116,7 @@
     "end_time": "15:30",
     "building": "LINC",
     "room": "268",
-    "latitude": 44.5658,
-    "longitude": -123.2762
+    "latitude": 44.565779,
+    "longitude": -123.281668
   }
 ]
