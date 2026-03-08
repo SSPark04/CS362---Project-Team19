@@ -67,20 +67,19 @@
 
 ### Goals planned for this week
 
-- Finished eevent sorter  
-- Finished Email parser  
-- Add test suits for both  
+- Started working on stretche  goal to alow a user to create there own events. 
+- Made sure we were ready for beta launch
 
 ### Team progress and issues
 
-- **what team member did:** Built the event sorter and email parser functionality  
-- **what worked:** I found that the documention we laid out was helpfull in implementing this. 
-- **what team member learned:** How to integrate smaller level functionality into a larger project  
+- **what team member did:** The beta launch went smoothly and we got good feedback from our other group
+- **what worked:** Meeting and talking on discord allowed us to cordinate our work together. And ensure that beta launch went smoothly.
+- **what team member learned:** How to put everything  together into a proper package for beta launch.
 
 ### Goals planned for next week (Lower-level individual tasks)
 
-- Finnish automatic email update 3 days 
-- Deing more test for the email and other function to get ready fo intial build 4 days
+- Finish create user events. 
+- Continue adding test to make sure that our project is good and finnished.
   
 
 ---
