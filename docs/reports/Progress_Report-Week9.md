@@ -84,12 +84,26 @@
 
 ### Goals planned for this week
 
+- Review beta testing feedback from ICE-4
+- Improve documentation based on tester feedback
+- Fix identified bugs in frontend modules
 
 ### Team progress and issues
 
+- **what team member did:**
+  - Reviewed beta testing feedback
+  - Added app screenshot and UI overview section to README (issue #11)
+  - Fixed geolocation error handling in `map.js` — added error callback for when users deny location permission
+  - Added input validation to `getEventsByRange` in `api.js` to guard against empty or invalid date inputs
+- **what worked:** README updates were straightforward using beta tester feedback as a guide; both JS fixes were low-risk and confirmed working via browser console testing
+- **what team member learned:** Beta tester feedback translates directly into concrete, actionable code and documentation improvements
+- **where stuck:** No blockers
 
 ### Goals planned for next week (Lower-level individual tasks)
 
+- Run final end-to-end testing to verify all features work correctly
+- Verify all GitHub issues are resolved or documented
+- Final documentation review and cleanup for submission
 
 ---
 
