@@ -24,6 +24,9 @@ function buildPopup(event) {
 }
 
 // fetch events and place a marker for each one that has valid coordinates
+const defaultCenter = [44.5646, -123.2620];
+const defaultZoom = 15;
+
 function renderMarkers(events) {
     markerLayer.clearLayers();
   
@@ -35,9 +38,12 @@ function renderMarkers(events) {
       groupedEvents[key].push(event);
     }
   
+    const markerCoords = [];
+
     for (const key in groupedEvents) {
       const evts = groupedEvents[key];
       const [lat, lng] = key.split(',').map(Number);
+      markerCoords.push([lat, lng]);
   
       let popupContent = "";
       evts.forEach(e => {
@@ -47,6 +53,14 @@ function renderMarkers(events) {
       L.marker([lat, lng])
         .addTo(markerLayer)
         .bindPopup(popupContent);
+    }
+
+    if (markerCoords.length > 1) {
+      map.fitBounds(L.latLngBounds(markerCoords), { padding: [40, 40] });
+    } else if (markerCoords.length === 1) {
+      map.setView(markerCoords[0], defaultZoom);
+    } else {
+      map.setView(defaultCenter, defaultZoom);
     }
 }
 

@@ -94,6 +94,41 @@ a { color: var(--accent); }
   border-radius: var(--radius);
 }
 
+.range-error {
+  color: #d32f2f;
+  font-weight: 600;
+  font-size: 13px;
+  margin: 4px 0 0;
+  min-height: 1.2em;
+}
+
+.range-error:empty {
+  display: none;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.filter-btn {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
 .footer {
   max-width: 1400px;
   margin: 0 auto;

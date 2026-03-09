@@ -97,12 +97,37 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### Troubleshooting
+
+- **pip not found inside venv (Windows):**
+  If `pip` is not available after activating the venv, recreate it with `--without-pip` and bootstrap pip manually:
+
+  ```powershell
+  python -m venv .venv --without-pip
+  .\.venv\Scripts\Activate.ps1
+  python -m ensurepip
+  pip install -r requirements.txt
+  ```
+
+- **`pytest` or `flask` not recognized (macOS):**
+  Use `python -m pytest` instead of `pytest`. This ensures the venv Python is used:
+
+  ```bash
+  python -m pytest
+  ```
+
 ## Test Instructions
 
 ### Run all automated tests
 
 ```bash
 pytest
+```
+
+If `pytest` is not recognized, use:
+
+```bash
+python -m pytest
 ```
 
 ### Run targeted tests for beta use case 3.4
