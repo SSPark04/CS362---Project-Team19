@@ -15,6 +15,29 @@ The software helps students find events by date and location, then view those ev
 
 - a calendar/events list view, and
 - an interactive map with event pins.
+## Project Purpose
+
+The software helps students find events by date and location, then view those events in both:
+
+- a calendar/events list view, and
+- an interactive map with event pins.
+
+![App Screenshot](docs/screenshots/website.png)
+
+### UI Overview
+
+**Left panel — Calendar & Events**
+- **All** — Show all events (reset any active filter)
+- **Today** — Show only today's events
+- **Week** — Show only this week's events
+- **Date range inputs + Apply Range** — Enter a custom start/end date and apply the filter
+- **Red dot on calendar date** — Indicates that one or more events exist on that date
+- **Events list** — Displays filtered events with date, name, and location
+
+**Right panel — Event Map**
+- **Map pins** — Shows event locations as pins on the OSU campus map
+- **Click a pin** — Opens a popup with event name, date/time, and location
+- **+/- buttons** — Zoom in/out on the map
 
 ## Beta Operational Use Case(s)
 
