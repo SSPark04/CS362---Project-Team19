@@ -108,12 +108,19 @@
 ---
 
 ## Team Member 4: Charley Lotspeich
-
+  
 ### Goals planned for this week
-
+- Complete the sorting functionality of the project
+- Review the beta release testing feedback given by another group
 
 ### Team progress and issues
-
+- **what team member did:**
+    - Finished the search and sorting functionality for the calendar
+    - Reviewed beta testing feedback from the group that tested our project
+    - Worked on the poster we have to present next week
+- **What worked:** 
+- **what team member learned:** Having multiple people test your code without giving any assistance provides really good feedback and improvements
+- **where stuck:** Nothing
 
 ### Goals planned for next week (Lower-level individual tasks)
-
+- Verify that all GitHub issues and all feedback are correctly implemented
