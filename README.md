@@ -2,6 +2,8 @@
 
 Busy Beaver Calendar is a web app for viewing OSU-related events in a calendar and map interface.
 
+You can access the live version at: https://cs362-project-team19.onrender.com
+
 ## Team
 
 - Sangwoo (Shawn) Park — Leader
