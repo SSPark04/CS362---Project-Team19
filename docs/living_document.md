@@ -619,16 +619,16 @@ Major milestones include architecture finalization, core feature implementation,
 
         (to be filled in by team member)
 
-10.3 Sangwoo (Shawn) Park
-
-        Lesson 1: The importance of communication in team projects
-            Early in the project, our team struggled with communication, which slowed our progress significantly. Once we made a conscious effort to stay in sync and collaborate actively, the project moved much faster than expected. I learned that even a team of skilled developers cannot produce good software without consistent communication.
-
-        Lesson 2: Working with external map APIs
-            Integrating a map API was a new experience for me. One challenge was that coordinates vary slightly depending on the map provider, which required careful adjustments. Overall it was a valuable experience that gave me more confidence working with third-party APIs.
-
-        Lesson 3: Balancing responsibilities outside of the project
-            While I contributed to the project, I felt I could have been more engaged if my schedule had allowed it. This experience taught me the importance of time management and planning ahead, so that outside responsibilities do not interfere with team contributions.
+    10.3 Sangwoo (Shawn) Park
+    
+            Lesson 1: The importance of communication in team projects
+                Early in the project, our team struggled with communication, which slowed our progress significantly. Once we made a conscious effort to stay in sync and collaborate actively, the project moved much faster than expected. I learned that even a team of skilled developers cannot produce good software without consistent communication.
+    
+            Lesson 2: Working with external map APIs
+                Integrating a map API was a new experience for me. One challenge was that coordinates vary slightly depending on the map provider, which required careful adjustments. Overall it was a valuable experience that gave me more confidence working with third-party APIs.
+    
+            Lesson 3: Balancing responsibilities outside of the project
+                While I contributed to the project, I felt I could have been more engaged if my schedule had allowed it. This experience taught me the importance of time management and planning ahead, so that outside responsibilities do not interfere with team contributions.
 
     10.4 Charley Lotspeich
 
