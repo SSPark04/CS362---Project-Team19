@@ -617,7 +617,12 @@ Major milestones include architecture finalization, core feature implementation,
 
     10.2 Brian McCarthy
 
-        (to be filled in by team member)
+         Lesson 1: What good testing looks like
+            Before this class I wasan't really certain how programs got tested inorder to make sure it was bug free. And I was certainly unware of how deep all the different test went. THe idea of mutant testing in paticular I found very intresting to show that your solution is correct.
+        Lesson 2: How to better comunicate as a team
+            I found that at the start of the project early on we were very much direction less. Even after given our midterm presentation we hadn't quite figured out what we were going to do yet. But affter meeting with the proffesor we were able to buckle down.
+        Lesson 3: How to read an email file
+            One of the things I had to implement was an automatic email parser. What it would do is go into someones email and look for EECS events and then automaticly read and update the info on our calander. It was fun and intresing chellenge trying to learn how to use the Outlook API.
 
     10.3 Sangwoo (Shawn) Park
     
