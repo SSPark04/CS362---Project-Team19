@@ -13,8 +13,7 @@ Ideas:
 Languages:
 
     - Python
-    - C++
-    - C
+    - JavaScript
 
 
 1. Team info
@@ -246,8 +245,6 @@ Optional (Future Extensions)
 
 
 6. Team Process Description
-
-6. Team Process Description (Expanded)
 
 6.1 Software Toolset
 
