@@ -1,6 +1,7 @@
 # Installation & Usage Guide
 
 Busy Beaver Calendar is a Flask web application. Follow the steps below to install and run it on your machine.
+or You can access the live version at: https://cs362-project-team19.onrender.com
 
 ## Prerequisites
 
