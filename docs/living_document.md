@@ -632,5 +632,12 @@ Major milestones include architecture finalization, core feature implementation,
 
     10.4 Charley Lotspeich
 
-        (to be filled in by team member)
+            Lesson 1: Group projects push you to learn unfamiliar tools
+                One thing I learned is that in a group project we end up using things we are unfamiliar with, like REST APIs. Learning how the frontend talks to backend endpoints was really interesting, and it helped me understand how our whole system fits together.
+
+            Lesson 2: Keep calendar and map tied to the same filter state
+                What went well was connecting custom date-range filtering so both components updated from one filtered event set. This reduced UI mismatches and made the app behavior more predictable.
+
+            Lesson 3: Communication is critical for project direction
+                In a project like this, people are constantly asking questions about priorities and direction, so communication became one of the most important parts of execution. Communication also keeps the project on track so it does not fall behind. What worked well was discussing changes before implementation so our work stayed aligned. What I would do differently is set a more regular check-in routine earlier so questions get resolved faster and fewer assumptions are made.
 
