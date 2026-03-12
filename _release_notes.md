@@ -15,6 +15,11 @@ Busy Beaver Calendar is a web application for viewing OSU-related events on a ca
 - **REST API** — Full CRUD endpoints for events (`/api/events`)
 - **Email parser** — Extracts event data from email text
 
+### API Endpoints
+- GET /api/events — Retrieve all events (supports filter, start, end, sort, order parameters)
+- GET /api/events/<event_id> — Retrieve a single event by ID
+- POST /api/events — Create a new event
+
 ### Test Suite
 
 - 70+ automated tests (unit, integration, validation, system)
