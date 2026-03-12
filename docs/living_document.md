@@ -601,3 +601,29 @@ Major milestones include architecture finalization, core feature implementation,
             Enforcement:
             We will use ESLint with the Airbnb configuration to automatically detect style issues. All pull requests will be reviewed to ensure compliance with the guideline.
 
+
+10. Reflections
+
+    10.1 Kyohei Yamaguchi
+
+        Lesson 1: The power of CI over manual testing
+            Before this project, my testing approach was mostly manual — adding print statements, traceback calls, and try-except blocks throughout the code to check for errors. While this works for small scripts, it does not scale. Setting up GitHub Actions with pytest changed my perspective completely. Every push and pull request automatically runs the full test suite, and I can see exactly which tests pass or fail without running anything locally. I learned that investing time in CI setup early saves far more time than manual debugging later.
+
+        Lesson 2: Clear documentation enables team collaboration
+            I spent a significant amount of time writing the implementation plan, Developer Guide, and progress reports. At first it felt like overhead, but it turned out to be one of the most valuable things I did. When team members needed to understand the API endpoints, the project structure, or how to add tests, they could refer to the documentation instead of asking questions. I learned that good documentation is not just for outsiders — it is essential for the team itself.
+
+        Lesson 3: Start with a working skeleton, then iterate
+            Rather than trying to build everything at once, I started with a minimal Flask app serving a static page, then added the data layer, then the API, then tests. Each step was small enough to verify before moving on. This incremental approach made it much easier to catch bugs early and keep the project in a working state at all times. I would use this same strategy in future projects.
+
+    10.2 Brian McCarthy
+
+        (to be filled in by team member)
+
+    10.3 Sangwoo (Shawn) Park
+
+        (to be filled in by team member)
+
+    10.4 Charley Lotspeich
+
+        (to be filled in by team member)
+
